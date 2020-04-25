@@ -1,0 +1,335 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#home-page {
+  border-right: 20px solid #78a195;
+  border-left: 20px solid #78a195;
+}
+
+@font-face {
+  font-family: "Slim Joe";
+  src: url(/fonts/SlimJoe-400.otf?c1fcde7db6225897ef15dfa64da74d9a);
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url(/fonts/Mont-Light.ttf?b2eac4c24494fce5da9406191a68a06e);
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url(/fonts/DejaVuSans-ExtraLight.ttf?28d82c60460b6b29bcfb1acb814ccdf4);
+}
+
+.main-title,
+.spark-ar {
+  font-family: "Slim Joe";
+  text-align: center;
+  font-weight: 100;
+}
+
+.main-title {
+  margin-bottom: 30px;
+  letter-spacing: 12px;
+  font-size: 50px;
+}
+
+.spark-ar {
+  margin-bottom: 150px;
+  letter-spacing: 5px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+header > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+header > ul > li {
+  margin-right: 20px;
+  color: #cbcbcb;
+  letter-spacing: 4px;
+  font-family: "DejaVu Sans";
+}
+
+li {
+  list-style: none;
+}
+
+.main-pods {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.pod-wrapper {
+  border: 1px solid #b2b2b2;
+  height: 200px;
+  padding: 8px 8px 70px;
+}
+
+.pod-wrapper:hover {
+  cursor: pointer;
+}
+
+.pod-image {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pod-image h3:first-child {
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.pod-wrapper:first-child h3:first-child {
+  opacity: 0.6;
+}
+
+.pod-image .opacity {
+  opacity: 0.2;
+}
+
+.pod-image h3 {
+  font-family: "Mont";
+  font-size: 34px;
+  text-align: center;
+  font-weight: 100;
+  line-height: 31px;
+}
+
+.pod-image:first-child h3 {
+  font-family: "Mont";
+  font-size: 34px;
+  text-align: center;
+  font-weight: 100;
+}
+
+.pod-wrapper:nth-child(1) .opacity {
+  margin-top: -18px;
+  font-size: 34px;
+}
+
+.pod-wrapper a {
+  text-decoration: none;
+  color: black;
+}
+
+.pod-wrapper a:active {
+  text-decoration: none;
+  color: black;
+}
+
+.pod-wrapper:nth-child(2) .opacity {
+  margin-top: -13px;
+}
+
+.pod-wrapper:nth-child(3) .opacity {
+  font-size: 37px;
+  margin-top: -15px;
+}
+
+.pod-wrapper:nth-child(4) .opacity {
+  margin-top: -17px;
+}
+
+.pod-wrapper:nth-child(1) .pod-image {
+  background: url(/images/main.jpg?b68e96d0fdb5205e0523e6d04ddd56d3);
+  background-size: 100% 100%;
+}
+
+.pod-wrapper:nth-child(2) .pod-image {
+  background: url(/images/gallery.jpg?f33b5095b4cdc17eda0c554f8e76be26);
+  background-size: 100% 100%;
+}
+
+.pod-wrapper:nth-child(3) .pod-image {
+  background: url(/images/order-mask.jpg?f547f1efb6b5c6bafe7fa37ac9b2d841);
+  background-size: 100% 100%;
+}
+
+.pod-wrapper:nth-child(4) .pod-image {
+  background: url(/images/questions.jpg?1422be0af3ed1b32026db3211095c6f3);
+  background-size: 100% 100%;
+}
+
+section > h1,
+section > h3 {
+  color: #c3c3c3;
+  font-weight: 100;
+  font-family: "Mont";
+}
+
+section > h1 {
+  font-size: 46px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  opacity: 0.85;
+}
+
+section > p,
+section > span,
+section li {
+  color: #5f5f5f;
+  font-size: 15px;
+  font-family: "Mont";
+  letter-spacing: 3px;
+}
+
+.main-page-section {
+  padding: 0 80px;
+  margin-top: 80px;
+}
+
+.main-page-section > span,
+.main-page-section ul {
+  margin-left: 100px;
+}
+
+.marketing-instrument h3 {
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-family: "Mont";
+}
+
+.marketing-instrument p {
+  font-family: "Mont";
+  font-size: 17px;
+}
+
+.marketing-instrument {
+  text-align: center;
+  margin-top: 70px;
+  padding-top: 35px;
+  margin-bottom: 80px;
+}
+
+.what-is-it {
+  position: relative;
+  margin-bottom: 134px;
+}
+
+.what-is-it-description {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  background: url(/images/scope.jpg?5d3d6ec38d757733474a49d9a52dc26a);
+  padding: 15px 0px 15px 36px;
+  background-size: 100% 100%;
+  width: 783px;
+  position: relative;
+}
+
+.what-is-it img {
+  width: 500px;
+  opacity: 0.75;
+  position: absolute;
+  right: -80px;
+}
+
+.what-is-it h1 {
+  transform-origin: center;
+  transform: rotate(-90deg);
+  font-family: "Mont";
+  position: absolute;
+  left: -136px;
+  top: 151px;
+}
+
+.what-is-it p {
+  line-height: 27px;
+  letter-spacing: 2px;
+  font-family: "Mont";
+  z-index: 1;
+}
+
+.first-background-span {
+  background: url(/images/span-background.jpg?2bf1976f910609394c83300121c97b16);
+  background-size: 100% 100%;
+  padding: 10px 59px 23px 35px;
+  margin-left: -36px;
+}
+
+.why-us li {
+  margin-top: 20px;
+}
+
+.why-us ul li:first-child {
+  background: url(/images/first-li-background.png?73b517fde15e58243bf534af715c87fb);
+  background-size: 100% 100%;
+  width: 307px;
+  padding-right: 42px;
+  line-height: 31px;
+  display: flex;
+  justify-content: center;
+}
+
+.why-us ul li:nth-child(2) {
+  background: url(/images/second-li-background.png?ca7d1a18c5948ec3284affee62b0ce42);
+  background-size: 100% 100%;
+  width: 528px;
+  line-height: 49px;
+  display: flex;
+  justify-content: center;
+}
+
+.why-us ul li:nth-child(3) {
+  background: url(/images/third-li-background.png?caf7437e2a7827ba84ee986d750d020d);
+  background-size: 100% 100%;
+  width: 290px;
+  line-height: 23px;
+  display: flex;
+  justify-content: center;
+  padding-top: 9px;
+  margin-top: 7px;
+}
+
+.your-order h1 {
+  margin-bottom: 20px;
+}
+
+.your-order li,
+.your-order span {
+  line-height: 24px;
+}
+
+.your-order li > span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.your-order > span {
+  display: block;
+}
+
+.your-order {
+  margin-bottom: 80px;
+}
+
+.main-tranmission {
+  margin-bottom: 50px;
+}
+
+.main-page-image {
+  width: 500px;
+  height: 375px;
+  background: url(/images/main-page-image.jpg?c7bdc9492353b0b97c30a7f5663a3e3b);
+  background-size: 100% 100%;
+  opacity: 0.75;
+  position: absolute;
+  right: -80px;
+}
+
