@@ -35,7 +35,7 @@ html {
 }
 
 .main-title {
-    margin-bottom: 30px;
+    margin: 100px 0 30px 0;
     letter-spacing: 12px;
     font-size: 50px;
 }
@@ -338,4 +338,120 @@ section li {
     opacity: 0.75;
     position: absolute;
     right: -80px;
+}
+
+// Gallery page styles
+.gallery {
+    .pod-wrapper:nth-child(1) .pod-image {
+        background: url(../images/camera_styles.png);
+        background-size: 100% 100%;
+    }
+
+    .pod-wrapper:nth-child(2) .pod-image {
+        background: url(../images/selfi.png);
+        background-size: 100% 100%;
+    }
+
+    .pod-wrapper:nth-child(3) .pod-image {
+        background: url(../images/objects.png);
+        background-size: 100% 100%;
+    }
+
+    .pod-wrapper:nth-child(4) .pod-image {
+        background: url(../images/gallery-questions.png);
+        background-size: 100% 100%;
+    }
+}
+
+.catalog {
+    margin-top: 100px;
+    display: flex;
+    justify-content: flex-start;
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.catalog-element {
+    width: 330px;
+}
+
+.cart-image {
+    background: url(../images/cart-image.png);
+    background-size: 100% 100%;
+    width: 127px;
+    height: 47px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.mask-mobile {
+    background: url(../images/mobile_template.png);
+    background-size: 100% 100%;
+    width: 330px;
+    height: 500px;
+}
+
+.mask-name {
+    font-family: Mont;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: -38px;
+    margin-bottom: 1px;
+}
+
+.price-mask {
+    font-family: Mont;
+    font-size: 23px;
+    font-style: italic;
+}
+
+.mask-description {
+    display: flex;
+    width: 243px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.qr {
+    width: 80px;
+    height: 80px;
+    background: #000;
+}
+
+.mask-qr {
+    width: 80px;
+
+    span {
+        font-family: Mont;
+    }
+
+    span:first-child {
+        font-size: 10px;
+        margin-top: 7px;
+    }
+
+    span:nth-child(2) {
+        font-size: 13px;
+    }
+}
+
+.try-it {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mask-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 222px;
+    margin: auto;
 }

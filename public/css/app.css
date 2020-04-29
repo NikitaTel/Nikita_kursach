@@ -35,7 +35,7 @@ html {
 }
 
 .main-title {
-  margin-bottom: 30px;
+  margin: 100px 0 30px 0;
   letter-spacing: 12px;
   font-size: 50px;
 }
@@ -331,5 +331,117 @@ section li {
   opacity: 0.75;
   position: absolute;
   right: -80px;
+}
+
+.gallery .pod-wrapper:nth-child(1) .pod-image {
+  background: url(/images/camera_styles.png?4e4227f5172dbe55f8537db22eabae1a);
+  background-size: 100% 100%;
+}
+
+.gallery .pod-wrapper:nth-child(2) .pod-image {
+  background: url(/images/selfi.png?6dcbd74c0a0163b13e7340ac9ee1951a);
+  background-size: 100% 100%;
+}
+
+.gallery .pod-wrapper:nth-child(3) .pod-image {
+  background: url(/images/objects.png?70d1766da95264910f7d39caf659eed8);
+  background-size: 100% 100%;
+}
+
+.gallery .pod-wrapper:nth-child(4) .pod-image {
+  background: url(/images/gallery-questions.png?57da1bf64d8689006087618dbbb99065);
+  background-size: 100% 100%;
+}
+
+.catalog {
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+  width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.catalog-element {
+  width: 330px;
+}
+
+.cart-image {
+  background: url(/images/cart-image.png?c3148b97c895279c63884e1551edc93b);
+  background-size: 100% 100%;
+  width: 127px;
+  height: 47px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.mask-mobile {
+  background: url(/images/mobile_template.png?b216c450da0e3bd5ca578f0bdccd841f);
+  background-size: 100% 100%;
+  width: 330px;
+  height: 500px;
+}
+
+.mask-name {
+  font-family: Mont;
+  font-style: italic;
+  font-size: 20px;
+  margin-top: -38px;
+  margin-bottom: 1px;
+}
+
+.price-mask {
+  font-family: Mont;
+  font-size: 23px;
+  font-style: italic;
+}
+
+.mask-description {
+  display: flex;
+  width: 243px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.qr {
+  width: 80px;
+  height: 80px;
+  background: #000;
+}
+
+.mask-qr {
+  width: 80px;
+}
+
+.mask-qr span {
+  font-family: Mont;
+}
+
+.mask-qr span:first-child {
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+.mask-qr span:nth-child(2) {
+  font-size: 13px;
+}
+
+.try-it {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mask-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 222px;
+  margin: auto;
 }
 

@@ -13,8 +13,7 @@
 @include('header')
 
 <main>
-    <h1 class="main-title">TWINPIXEL</h1>
-    <h3 class="spark-ar">SPARK AR STUDIO | 2020</h3>
+
 
     <section class="main-pods">
         <div class="pod-wrapper">
