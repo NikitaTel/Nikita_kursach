@@ -13,6 +13,7 @@
 
     @yield('content')
 
+    @include('inc.messages')
 
 </body>
 </html>

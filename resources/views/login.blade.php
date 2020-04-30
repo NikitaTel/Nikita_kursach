@@ -2,17 +2,26 @@
 
 @section('content')
     <div class="login-form">
-       <h1>Войти</h1>
-        <form action="{{ route('registration-form') }}" method="post">
+        <form action="{{ route('login-form') }}" method="post">
             @csrf
 
-            <label for="Email">Email</label>
-            <input name="Email" id="Email" type="text" placeholder="Email">
+            <input name="login" id="login" type="text" placeholder="Логин">
 
-            <label for="password">Password</label>
-            <input name="password" type="text" placeholder="password" id="password">
 
-            <button type="submit">Submit</button>
+            <input name="password" type="text" placeholder="Пароль" id="password">
+
+            <button type="submit">ВОЙТИ</button>
         </form>
+
+
+        <div class="sign-up-redirect">
+            <span class="txt1">
+							Don’t have an account?
+						</span>
+            <a class="txt2" href="#">
+                Sign Up
+            </a>
+        </div>
     </div>
+
 @endsection

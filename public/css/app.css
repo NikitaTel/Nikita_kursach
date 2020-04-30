@@ -18,6 +18,11 @@ html {
 }
 
 @font-face {
+  font-family: Poppins-Medium;
+  src: url(/fonts/Poppins-Medium.ttf?a4e11dda40531debd374e4c8b1dcc7f4);
+}
+
+@font-face {
   font-family: "Mont";
   src: url(/fonts/Mont-Light.ttf?b2eac4c24494fce5da9406191a68a06e);
 }
@@ -443,5 +448,68 @@ section li {
   justify-content: space-between;
   width: 222px;
   margin: auto;
+}
+
+.login-form {
+  width: 250px;
+  margin: auto;
+}
+
+.login-form button {
+  font-family: Mont;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  outline: none !important;
+  border: none;
+  background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #B721E7);
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 40px auto;
+}
+
+.login-form input {
+  font-family: Mont;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  padding: 0 5px;
+  outline: none;
+  border: none;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin-bottom: 37px;
+}
+
+.login-form .sign-up-redirect {
+  text-align: center;
+}
+
+.login-form .sign-up-redirect .txt1 {
+  font-family: Mont;
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.login-form .sign-up-redirect .txt2 {
+  font-family: Mont;
+  font-size: 13px;
+  color: #333333;
+  line-height: 1.5;
+  text-decoration: none;
 }
 

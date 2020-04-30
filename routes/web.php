@@ -33,6 +33,7 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::post('/registration/submit', function () {
-    dd(Request::all());
-})->name('registration-form');
+
+Route::get('/contactsList', "\App\Http\Controllers\ContactController@allContacts")->name('contactsList');
+
+Route::post('/registration/submit', "\App\Http\Controllers\ContactController@submit")->name('login-form');
