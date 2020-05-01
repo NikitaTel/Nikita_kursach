@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
 Route::get('/gallery', function () {
     return view('gallery');
@@ -37,3 +34,11 @@ Route::get('/login', function () {
 Route::get('/contactsList', "\App\Http\Controllers\ContactController@allContacts")->name('contactsList');
 
 Route::post('/registration/submit', "\App\Http\Controllers\ContactController@submit")->name('login-form');
+
+Auth::routes();
+
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
   padding: 0;
   margin: 0;
@@ -5,11 +7,9 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-#home-page {
   border-right: 20px solid #78a195;
   border-left: 20px solid #78a195;
+  min-height: 100vh;
 }
 
 @font-face {
@@ -41,15 +41,27 @@ html {
 
 .main-title {
   margin: 100px 0 30px 0;
-  letter-spacing: 12px;
+  letter-spacing: 16px;
   font-size: 50px;
 }
 
+.main-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.main-title a:focus {
+  outline: none;
+}
+
 .spark-ar {
-  margin-bottom: 150px;
   letter-spacing: 5px;
   font-size: 13px;
   font-weight: 800;
+}
+
+.main-pods {
+  margin-top: 150px;
 }
 
 header > ul {
@@ -64,6 +76,15 @@ header > ul > li {
   color: #cbcbcb;
   letter-spacing: 4px;
   font-family: "DejaVu Sans";
+}
+
+header > ul > li a {
+  text-decoration: none;
+  color: #cbcbcb;
+}
+
+header > ul > li a:focus {
+  outline: none;
 }
 
 li {
@@ -442,6 +463,36 @@ section li {
   flex-direction: column;
 }
 
+.order-opportunities-pods .texture h2 {
+  background: url(/images/текстура_пнг.png?4edaf3aa59bb934bb4d2ef82d4f1f3a1);
+  background-size: 100% 100%;
+  width: 178px;
+  margin-left: auto;
+  margin-right: 131px;
+  padding: 0 6px 0 51px;
+}
+
+.order-opportunities-pods .d_obj h2 {
+  background: url(/images/3D_объекты_пнг.png?ae51eba12ed73dc866a371bccb1b0ee2);
+  background-size: 100% 100%;
+  width: 220px;
+  margin-left: auto;
+  margin-right: 108px;
+  padding: 0 0 0 32px;
+}
+
+.order-opportunities-pods .fly h2 span {
+  background: url(/images/летающие_частицы_пнг.png?b31af7c1a17baa0e204e0ddd19f27b02);
+  background-size: 100% 100%;
+  padding: 33px 11px 9px 0;
+}
+
+.order-opportunities-pods .segment h2 {
+  background: url(/images/сегментация_фона_пнг.png?d2e002465baddaf5cd3f05e68b643e58);
+  background-size: 100% 100%;
+  width: 304px;
+}
+
 .mask-wrapper {
   display: flex;
   flex-direction: row;
@@ -450,12 +501,14 @@ section li {
   margin: auto;
 }
 
-.login-form {
+.login-form,
+.registration-form {
   width: 250px;
-  margin: auto;
+  margin: 150px auto;
 }
 
-.login-form button {
+.login-form button,
+.registration-form button {
   font-family: Mont;
   font-size: 15px;
   color: #fff;
@@ -468,7 +521,7 @@ section li {
   height: 50px;
   outline: none !important;
   border: none;
-  background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #B721E7);
+  background: -webkit-linear-gradient(right, rgba(255, 0, 0, 0.6), rgba(120, 161, 149, 0.85) 48%);
   display: block;
   position: relative;
   z-index: 1;
@@ -477,7 +530,8 @@ section li {
   margin: 40px auto;
 }
 
-.login-form input {
+.login-form .style-input,
+.registration-form .style-input {
   font-family: Mont;
   font-size: 15px;
   color: #555555;
@@ -494,22 +548,164 @@ section li {
   margin-bottom: 37px;
 }
 
-.login-form .sign-up-redirect {
+.login-form a,
+.login-form label {
+  font-family: Mont;
+  font-size: 15px;
+  color: #555555;
+  text-decoration: none;
+}
+
+.login-form a {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.login-form .sign-up-redirect,
+.registration-form .sign-up-redirect {
   text-align: center;
 }
 
-.login-form .sign-up-redirect .txt1 {
+.login-form .sign-up-redirect .txt1,
+.registration-form .sign-up-redirect .txt1 {
   font-family: Mont;
   font-size: 13px;
   color: #666666;
   line-height: 1.5;
 }
 
-.login-form .sign-up-redirect .txt2 {
+.login-form .sign-up-redirect .txt2,
+.registration-form .sign-up-redirect .txt2 {
   font-family: Mont;
   font-size: 13px;
   color: #333333;
   line-height: 1.5;
   text-decoration: none;
+}
+
+.order-information {
+  margin-top: 150px;
+}
+
+.order-information h3,
+.order-information h4,
+.order-information p,
+.order-information button,
+.order-information textarea,
+.order-information h2 {
+  color: #878787;
+  font-family: Mont;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+
+.order-information .order-description {
+  z-index: 2;
+  background: url(/images/order-input-borders.png?2a9a9b5d47d3c6e8f27b45670857c518);
+  width: 775px;
+  height: 376px;
+  margin-left: auto;
+}
+
+.order-information textarea {
+  background: url(/images/order-input.png?20f638ba408517be8f704ac1cd2dd606);
+  border: none;
+  width: 100%;
+  background-size: 100% 100%;
+  height: 366px;
+  padding: 10px 0 0 10px;
+}
+
+.order-information textarea:focus {
+  outline: none;
+}
+
+.order-information .order-information-submit {
+  background: url(/images/order-button.png?fe4c9d3a641348a78a6ed311d8c1cc1b);
+  border: none;
+  padding: 10px 20px;
+  background-size: 100% 100%;
+  font-size: 15px;
+  display: block;
+  margin: 20px 0 10px auto;
+}
+
+.order-information .order-information-submit:focus {
+  outline: none;
+}
+
+.order-information p {
+  font-size: 15px;
+  line-height: 28px;
+  text-align: end;
+  margin-top: 30px;
+}
+
+.order-information .order-form {
+  padding-right: 50px;
+}
+
+.order-information h3,
+.order-information h4 {
+  margin-bottom: 10px;
+  text-align: end;
+  padding-right: 50px;
+}
+
+.order-opportunities h2,
+.order-opportunities p {
+  letter-spacing: 4px;
+  color: #2f2f2f;
+  font-family: Mont;
+  font-weight: 100;
+}
+
+.order-opportunities > h2 {
+  width: 784px;
+  margin: 50px auto 20px auto;
+}
+
+.order-opportunities > p {
+  text-align: center;
+  margin: 50px;
+}
+
+.order-opportunities-pods {
+  display: flex;
+  flex-wrap: wrap;
+  width: 900px;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.order-opportunities-pods .order-opportunities-pod {
+  width: 450px;
+  margin-top: 50px;
+}
+
+.order-opportunities-pods .order-opportunities-pod:nth-child(2n) h2,
+.order-opportunities-pods .order-opportunities-pod:nth-child(2n) p {
+  text-align: start;
+}
+
+.order-opportunities-pods .order-opportunities-pod:nth-child(2n+1) h2,
+.order-opportunities-pods .order-opportunities-pod:nth-child(2n+1) p {
+  text-align: center;
+}
+
+.order-opportunities-pods p {
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.order-opportunities-pods h2 {
+  margin-bottom: 12px;
+}
+
+.order-opportunities-pods .face h2 {
+  background: url(/images/сглаживание_лица_пнг.png?181f0767fbfde73a53dbe6d1a80698e0);
+  background-size: 100% 100%;
+  width: 220px;
 }
 
