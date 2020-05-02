@@ -71,14 +71,14 @@ header > ul {
 
 header > ul > li {
     margin-right: 20px;
-    color: #cbcbcb;
     letter-spacing: 4px;
+    color: darken(#cbcbcb,20%);
     font-family: "DejaVu Sans";
 }
 
 header > ul > li a {
     text-decoration: none;
-    color: #cbcbcb;
+    color: darken(#cbcbcb,20%);
 }
 
 header > ul > li a:focus {
@@ -461,6 +461,8 @@ section li {
     flex-direction: column;
 }
 
+//order-mask
+
 .order-opportunities-pods .texture h2 {
     background: url(../images/текстура_пнг.png?4edaf3aa59bb934bb4d2ef82d4f1f3a1);
     background-size: 100% 100%;
@@ -654,7 +656,7 @@ section li {
 
 .order-opportunities h2,
 .order-opportunities p {
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     color: #2f2f2f;
     font-family: Mont;
     font-weight: 100;

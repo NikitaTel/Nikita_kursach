@@ -1,6 +1,11 @@
 <?php
-
+namespace App\Http\Controllers\Auth;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LogoutController;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use phpDocumentor\Reflection\Types\Boolean;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,33 +17,36 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//,['user'=> Auth::user(),'check'=> Auth::check()]
 
 
 Route::get('/gallery', function () {
-    return view('gallery');
+    return view('gallery',['user'=> Auth::user(),'check'=> Auth::check()]);
 })->name('gallery');
 
 Route::get('/order-mask', function () {
-    return view('order-mask');
+    return view('order-mask',['user'=> Auth::user(),'check'=> Auth::check()]);
 })->name('order-mask');
 
 Route::get('/questions', function () {
-    return view('questions');
+    return view('questions',['user'=> Auth::user(),'check'=> Auth::check()]);
 })->name('questions');
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::get('/profile', function () {
+        return view('profile',['user'=> Auth::user(),'check'=> Auth::check()]);
+})->name('profile');
 
-
-Route::get('/contactsList', "\App\Http\Controllers\ContactController@allContacts")->name('contactsList');
-
-Route::post('/registration/submit', "\App\Http\Controllers\ContactController@submit")->name('login-form');
+Route::get('/cart', function () {
+    return view('cart',['user'=> Auth::user(),'check'=> Auth::check()]);
+})->name('cart');
 
 Auth::routes();
 
+Route::get('/logout', function () {
+    Auth::logout();
+})->name('logoutUser');
+
+
 Route::get('/', function () {
-    return view('home');
+    return view('home',['user'=> Auth::user(),'check'=> Auth::check()]);
 })->name('home');
-
-

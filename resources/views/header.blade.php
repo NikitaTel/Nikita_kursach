@@ -1,9 +1,20 @@
 @section('header')
+
+
     <header>
         <ul>
-            <li class="cart">корзина</li>
-            <li class="sign-in"><a href="{{route('login')}}">войти</a></li>
-            <li class="sign-in"><a href="{{route('contactsList')}}">list</a></li>
+            <li class="cart"><a href="{{route('cart')}}">корзина</a></li>
+            <li class="sign-in">
+                @if($check ?? '')
+                    <a href="{{route('profile')}}">хеллоу,{{$user->login}}</a>
+
+                    <a  href="{{route('logoutUser')}}" class="sign-out">Выйти</a>
+
+                @else
+                    <a href="{{route('login')}}">войти</a>
+                @endif
+
+            </li>
         </ul>
     </header>
 

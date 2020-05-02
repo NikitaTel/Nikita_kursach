@@ -73,14 +73,14 @@ header > ul {
 
 header > ul > li {
   margin-right: 20px;
-  color: #cbcbcb;
   letter-spacing: 4px;
+  color: #989898;
   font-family: "DejaVu Sans";
 }
 
 header > ul > li a {
   text-decoration: none;
-  color: #cbcbcb;
+  color: #989898;
 }
 
 header > ul > li a:focus {
@@ -655,7 +655,7 @@ section li {
 
 .order-opportunities h2,
 .order-opportunities p {
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   color: #2f2f2f;
   font-family: Mont;
   font-weight: 100;
