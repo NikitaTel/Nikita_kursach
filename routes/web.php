@@ -40,6 +40,10 @@ Route::get('/cart', function () {
     return view('cart',['user'=> Auth::user(),'check'=> Auth::check()]);
 })->name('cart');
 
+Route::get('/cart-download', function () {
+    return view('cart-download',['user'=> Auth::user(),'check'=> Auth::check()]);
+})->name('cart-download');
+
 Auth::routes();
 
 Route::get('/logout', function () {

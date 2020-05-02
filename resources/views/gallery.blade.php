@@ -38,7 +38,7 @@
 
     <section class="catalog">
         <div class="catalog-element">
-            <div class="mask-mobile"></div>
+            <div class="mask-mobile"><div class="mask-image"></div></div>
             <div class="mask-wrapper">
                 <div class="mask-description">
                     <div class="mask-name">TWINPIXEL</div>

@@ -1,6 +1,5 @@
 @section('header')
 
-
     <header>
         <ul>
             <li class="cart"><a href="{{route('cart')}}">корзина</a></li>
