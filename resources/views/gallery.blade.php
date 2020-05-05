@@ -37,24 +37,28 @@
 
 
     <section class="catalog">
-        <div class="catalog-element">
-            <div class="mask-mobile"><div class="mask-image"></div></div>
-            <div class="mask-wrapper">
-                <div class="mask-description">
-                    <div class="mask-name">TWINPIXEL</div>
-                    <div class="cart-image">
-                        <span class="price-mask">35 BYN</span>
+        @foreach($masks as $mask)
+            @if($mask->category_id==1)
+            <div class="catalog-element">
+                <div class="mask-mobile"><div class="mask-image" style="background: url('{{$mask->mask_img}}');background-size: 100% 100%;"></div></div>
+                <div class="mask-wrapper">
+                    <div class="mask-description">
+                        <div class="mask-name">{{$mask->mask_name}}</div>
+                        <div class="cart-image">
+                            <span class="price-mask">{{$mask->price}} BYN</span>
+                        </div>
                     </div>
-                </div>
-                <div class="mask-qr">
-                    <div class="qr"></div>
-                    <div class="try-it">
-                        <span>попробовать в</span>
-                        <span>Instagram</span>
+                    <div class="mask-qr">
+                        <div class="qr" style="background: url('{{$mask->mask_qr}}');background-size: 100% 100%;" ></div>
+                        <div class="try-it">
+                            <span>попробовать в</span>
+                            <span>Instagram</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            @endif
+        @endforeach
 
     </section>
 @endsection

@@ -77,10 +77,13 @@ header > ul {
 }
 
 header > ul > li {
-  margin-right: 20px;
   letter-spacing: 4px;
   color: #989898;
   font-family: "DejaVu Sans";
+}
+
+header > ul > li:first-child {
+  margin-right: 20px;
 }
 
 header > ul > li a {
@@ -424,7 +427,6 @@ section li {
 }
 
 .mask-image {
-  background: url(/images/TWINPIXEL.png?c40313c0cb0bafa9311872847f2aca32);
   background-size: 100% 100%;
   height: 523px;
   top: 16px;
@@ -461,7 +463,6 @@ section li {
 .qr {
   width: 100px;
   height: 100px;
-  background: url(/images/TWINPIXEL-qr.gif?2fb5ac9be9940710835f5a6488a3f6a9);
   background-size: 100% 100%;
 }
 
@@ -528,13 +529,15 @@ section li {
 }
 
 .login-form,
-.registration-form {
+.registration-form,
+.reset-password {
   width: 250px;
   margin: 150px auto;
 }
 
 .login-form button,
-.registration-form button {
+.registration-form button,
+.reset-password button {
   font-family: Mont;
   font-size: 15px;
   color: #fff;
@@ -557,7 +560,8 @@ section li {
 }
 
 .login-form .style-input,
-.registration-form .style-input {
+.registration-form .style-input,
+.reset-password .style-input {
   font-family: Mont;
   font-size: 15px;
   color: #555555;
@@ -825,5 +829,45 @@ section li {
   font-size: 23px;
   font-style: italic;
   margin-left: 50px;
+}
+
+.admin-submit {
+  margin-top: 50px;
+}
+
+.admin-submit .admin-add {
+  display: flex;
+  justify-content: space-around;
+}
+
+.admin-submit .admin-add > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-submit label {
+  font-family: Mont;
+  margin: auto;
+}
+
+.admin-submit input {
+  margin-top: 5px;
+  padding: 10px 10px;
+  font-family: Mont;
+  border-radius: 18px;
+  border: 1px solid #c3c3c3;
+}
+
+.admin-submit input:focus {
+  outline: none;
+}
+
+.admin-submit > input {
+  display: block;
+  margin: 50px auto;
+  padding: 15px 40px;
+  background: #333333;
+  color: white;
+  font-size: 16px;
 }
 

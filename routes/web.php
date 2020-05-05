@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LogoutController;
+
+use App\Mask;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,7 @@ use phpDocumentor\Reflection\Types\Boolean;
 
 
 Route::get('/gallery', function () {
-    return view('gallery',['user'=> Auth::user(),'check'=> Auth::check()]);
+    return view('gallery',['user'=> Auth::user(),'check'=> Auth::check(), 'masks' => Mask::all()]);
 })->name('gallery');
 
 Route::get('/order-mask', function () {
@@ -54,3 +55,5 @@ Route::get('/logout', function () {
 Route::get('/', function () {
     return view('home',['user'=> Auth::user(),'check'=> Auth::check()]);
 })->name('home');
+
+Route::post('/profile/add', 'AddNewMask@add')->name('addMask');

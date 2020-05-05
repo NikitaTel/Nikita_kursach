@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactsTable extends Migration
+class CreatePaymentTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('email');
-            $table->string('password');
-            $table->timestamps();
+        Schema::create('payment_types', function (Blueprint $table) {
+            $table->increments('Id_Payment');
+            $table->string('Name_Payment');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('payment_types');
     }
 }

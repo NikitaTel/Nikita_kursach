@@ -75,10 +75,13 @@ header > ul {
 }
 
 header > ul > li {
-    margin-right: 20px;
     letter-spacing: 4px;
     color: darken(#cbcbcb,20%);
     font-family: "DejaVu Sans";
+}
+
+header > ul > li:first-child {
+    margin-right: 20px;
 }
 
 header > ul > li a {
@@ -422,7 +425,7 @@ section li {
 }
 
 .mask-image {
-    background: url(../images/masks/TWINPIXEL.png);
+    //background: url(../images/masks/MAGIC-VIBE.png);
     background-size: 100% 100%;
     height: 523px;
     top: 16px;
@@ -459,7 +462,7 @@ section li {
 .qr {
     width: 100px;
     height: 100px;
-    background: url("../images/masks/TWINPIXEL-qr.gif");
+    //background: url("../images/masks/MAGIC-VIBE-qr.gif");
     background-size: 100% 100%;
 }
 
@@ -528,50 +531,57 @@ margin: auto;
 }
 
 .login-form,
-.registration-form {
+.registration-form,
+.reset-password {
 width: 250px;
 margin: 150px auto;
 }
 
-.login-form button,
-.registration-form button {
-font-family: Mont;
-font-size: 15px;
-color: #fff;
-line-height: 1.2;
-text-transform: uppercase;
-justify-content: center;
-align-items: center;
-padding: 0 20px;
-width: 100%;
-height: 50px;
-outline: none !important;
-border: none;
-background: -webkit-linear-gradient(right, rgba(255, 0, 0, 0.6), rgba(120, 161, 149, 0.85) 48%);
-display: block;
-position: relative;
-z-index: 1;
-border-radius: 25px;
-overflow: hidden;
-margin: 40px auto;
+.login-form,
+.registration-form,
+.reset-password {
+    button {
+        font-family: Mont;
+        font-size: 15px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        width: 100%;
+        height: 50px;
+        outline: none !important;
+        border: none;
+        background: -webkit-linear-gradient(right, rgba(255, 0, 0, 0.6), rgba(120, 161, 149, 0.85) 48%);
+        display: block;
+        position: relative;
+        z-index: 1;
+        border-radius: 25px;
+        overflow: hidden;
+        margin: 40px auto;
+    }
 }
 
-.login-form .style-input,
-.registration-form .style-input {
-font-family: Mont;
-font-size: 15px;
-color: #555555;
-line-height: 1.2;
-display: block;
-width: 100%;
-height: 45px;
-background: transparent;
-padding: 0 5px;
-outline: none;
-border: none;
-position: relative;
-border-bottom: 2px solid #adadad;
-margin-bottom: 37px;
+.login-form,
+.registration-form,
+.reset-password {
+    .style-input {
+        font-family: Mont;
+        font-size: 15px;
+        color: #555555;
+        line-height: 1.2;
+        display: block;
+        width: 100%;
+        height: 45px;
+        background: transparent;
+        padding: 0 5px;
+        outline: none;
+        border: none;
+        position: relative;
+        border-bottom: 2px solid #adadad;
+        margin-bottom: 37px;
+    }
 }
 
 .login-form {
@@ -827,5 +837,46 @@ width: 220px;
             font-style: italic;
             margin-left: 50px;
         }
+    }
+}
+
+// admin-panel
+.admin-submit {
+
+    margin-top: 50px;
+    .admin-add {
+        display: flex;
+        justify-content: space-around;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    label {
+        font-family: Mont;
+        margin: auto;
+    }
+
+    input {
+        margin-top: 5px;
+        padding: 10px 10px;
+        font-family: Mont;
+        border-radius: 18px;
+        border: 1px solid #c3c3c3;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    > input {
+        display: block;
+        margin: 50px auto;
+        padding: 15px 40px;
+        background: lighten(black, 20%);
+        color: white;
+        font-size: 16px;
     }
 }
