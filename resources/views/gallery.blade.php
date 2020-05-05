@@ -44,9 +44,9 @@
                 <div class="mask-wrapper">
                     <div class="mask-description">
                         <div class="mask-name">{{$mask->mask_name}}</div>
-                        <div class="cart-image">
+                        <a class="cart-image" href="{{route('addToCart',['id' =>$mask->id])}}">
                             <span class="price-mask">{{$mask->price}} BYN</span>
-                        </div>
+                        </a>
                     </div>
                     <div class="mask-qr">
                         <div class="qr" style="background: url('{{$mask->mask_qr}}');background-size: 100% 100%;" ></div>

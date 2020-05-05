@@ -16,19 +16,29 @@
 
 
     <section class="cart-products">
+        @if(Session::has('cart'))
+            @foreach((new App\Http\Controllers\CartController)->getCart()->items as $cart)
+                <div class="cart-products-included">
+                    <div class="cart-product-background"></div>
+                    <div class="cart-product">
+                        <span>{{$cart['qty']}}</span>
+                        <div class="mask-mobile"><div class="mask-image" style="background: url('{{$cart['item']['mask_img']}}');background-size: 100% 100%;"></div></div>
+                        <div class="mask-name">{{$cart['item']['mask_name']}}</div>
+                        <span class="price-mask">{{$cart['item']['price']}} BYN</span>
+                    </div>
+                    <a href="{{route('removeFromCart',['id' =>$cart['item']['id']])}}">Удалить</a>
+                    <span class="cart-subtotal">{{$cart['price']}}</span>
+                </div>
 
-        <div class="cart-products-included">
-            <div class="cart-product-background"></div>
-            <div class="cart-product">
-                <div class="mask-mobile"><div class="mask-image"></div></div>
-                <div class="mask-name">TWINPIXEL</div>
-                <span class="price-mask">35 BYN</span>
-            </div>
-        </div>
+            @endforeach
+                <div class="cart-cost">Полная стоимость: <span class="cost">{{(new App\Http\Controllers\CartController)->getCart()->totalPrice}} BYN</span></div>
+                <div class="cart-next"><a href="{{route('cart-download')}}">Перейти к оплате</a></div>
+
+        @else
+            <div class="empty-cart">Корзина пуста</div>
+        @endif
 
 
-        <div class="cart-cost">Полная стоимость: <span class="cost">35 BYN</span></div>
-        <div class="cart-next"><a href="{{route('cart-download')}}">Перейти к оплате</a></div>
 
     </section>
 

@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
     /*
     |--------------------------------------------------------------------------
     | Application Name

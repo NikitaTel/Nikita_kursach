@@ -2,12 +2,15 @@
 
     <header>
         <ul>
-            <li class="cart"><a href="{{route('cart')}}">корзина</a></li>
+            <li class="cart"><a href="{{route('cart')}}">корзина  @if(Session::has('cart'))
+                <span class="cart-count">{{Session::get('cart')->totalQty}}</span>
+                    @else
+                        @endif</a></li>
             <li class="sign-in">
                 @if($check ?? '')
                     <a href="{{route('profile')}}">хеллоу,{{$user->login}}</a>
 
-                    <a  href="{{route('logoutUser')}}" class="sign-out">Выйти</a>
+                    <a  href="{{route('logoutUser')}}" class="sign-out">выйти</a>
 
                 @else
                     <a href="{{route('login')}}">войти</a>

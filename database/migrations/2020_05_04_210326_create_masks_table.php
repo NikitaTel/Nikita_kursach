@@ -14,7 +14,7 @@ class CreateMasksTable extends Migration
     public function up()
     {
         Schema::create('masks', function (Blueprint $table) {
-            $table->increments('mask_id');
+            $table->increments('id');
             $table->string('mask_name');
             $table->string('mask_img');
             $table->string('mask_qr');

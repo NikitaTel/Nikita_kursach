@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 
 use App\Mask;
 use App\Providers\RouteServiceProvider;
+use Darryldecode\Cart\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use phpDocumentor\Reflection\Types\Boolean;
@@ -18,11 +19,10 @@ use phpDocumentor\Reflection\Types\Boolean;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//,['user'=> Auth::user(),'check'=> Auth::check()]
-
 
 Route::get('/gallery', function () {
-    return view('gallery',['user'=> Auth::user(),'check'=> Auth::check(), 'masks' => Mask::all()]);
+    return view('gallery',['user'=> Auth::user(),'check'=> Auth::check(),
+        'masks' => Mask::all(),'cartCount']);
 })->name('gallery');
 
 Route::get('/order-mask', function () {
@@ -49,6 +49,7 @@ Auth::routes();
 
 Route::get('/logout', function () {
     Auth::logout();
+    return redirect()->route('home');
 })->name('logoutUser');
 
 
@@ -57,3 +58,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::post('/profile/add', 'AddNewMask@add')->name('addMask');
+
+Route::get('/add-to-cart/{id}', [
+    'uses' => 'CartController@addToCart'
+])->name('addToCart');
+
+Route::get('/remove-from-cart/{id}', [
+    'uses' => 'CartController@removeFromCart'
+])->name('removeFromCart');

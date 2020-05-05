@@ -86,6 +86,23 @@ header > ul > li:first-child {
   margin-right: 20px;
 }
 
+header > ul > li:first-child a {
+  display: flex;
+}
+
+header > ul > li:first-child a span {
+  background: #535353;
+  text-align: center;
+  border-radius: 39px;
+  display: flex;
+  padding: 2px 0px 2px 3px;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  font-size: 14px;
+  color: white;
+}
+
 header > ul > li a {
   text-decoration: none;
   color: #989898;
@@ -415,6 +432,13 @@ section li {
   justify-content: flex-start;
   align-items: center;
   padding-left: 8px;
+  color: #9f9f9f;
+  text-decoration: none;
+}
+
+.cart-count {
+  font-size: 14px;
+  color: #535353;
 }
 
 .mask-mobile {
@@ -427,6 +451,7 @@ section li {
 }
 
 .mask-image {
+  background: url(/images/LATTE.png?5b79ac4f1b95f34745a81ca2bcdab205);
   background-size: 100% 100%;
   height: 523px;
   top: 16px;
@@ -451,6 +476,22 @@ section li {
   font-style: italic;
 }
 
+.cart-subtotal {
+  display: block;
+  width: 302px;
+  text-align: center;
+  margin: 0 0 32px auto;
+  font-family: Mont;
+  font-size: 23px;
+  font-style: italic;
+}
+
+.empty-cart {
+  font-size: 15px;
+  font-family: "Mont";
+  letter-spacing: 3px;
+}
+
 .mask-description {
   display: flex;
   width: 243px;
@@ -463,6 +504,7 @@ section li {
 .qr {
   width: 100px;
   height: 100px;
+  background: url(/images/LATTE-qr.gif?acd43533bcf73771a0fa48ae40c51fef);
   background-size: 100% 100%;
 }
 
