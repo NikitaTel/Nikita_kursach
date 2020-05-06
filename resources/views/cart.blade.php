@@ -18,6 +18,7 @@
     <section class="cart-products">
         @if(Session::has('cart'))
             @foreach((new App\Http\Controllers\CartController)->getCart()->items as $cart)
+                @if($cart['item']['id'])
                 <div class="cart-products-included">
                     <div class="cart-product-background"></div>
                     <div class="cart-product">
@@ -29,7 +30,7 @@
                     <a href="{{route('removeFromCart',['id' =>$cart['item']['id']])}}">Удалить</a>
                     <span class="cart-subtotal">{{$cart['price']}}</span>
                 </div>
-
+                @endif
             @endforeach
                 <div class="cart-cost">Полная стоимость: <span class="cost">{{(new App\Http\Controllers\CartController)->getCart()->totalPrice}} BYN</span></div>
                 <div class="cart-next"><a href="{{route('cart-download')}}">Перейти к оплате</a></div>

@@ -27,7 +27,14 @@ class CartController extends Controller
         $cart = new Cart($oldCart);
         $cart->remove($mask, $mask->id);
 
-        $request->session()->forget('cart'  );
+        $request->session()->put('cart', $cart);
+
+        session()->flash('success',$cart->items[$id]['qty'] );
+
+
+        if(Session::get('cart')->totalQty ==0) {
+            session()->forget('cart');
+        }
         return redirect()->route('cart');
     }
 

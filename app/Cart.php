@@ -36,10 +36,16 @@ class Cart
 
         $storedItem = $this->items[$id];
 
-        $storedItem['qty']--;
-        $storedItem['price'] = $item->price * $storedItem['qty'];
+
+        $this->items[$id]['qty']--;
+        $this->items[$id]['price'] = $item->price * $this->items[$id]['qty'];
         $this->totalQty--;
         $this->totalPrice -= $item->price;
-        $this->items[$id]=null;
+        if ($storedItem['qty']==1)
+        {
+            $this->items[$id]=null;
+            session()->forget('cart');
+
+        }
     }
 }

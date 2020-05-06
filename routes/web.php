@@ -38,7 +38,9 @@ Route::get('/profile', function () {
 })->name('profile');
 
 Route::get('/cart', function () {
+//    session()->forget('cart');
     return view('cart',['user'=> Auth::user(),'check'=> Auth::check()]);
+
 })->name('cart');
 
 Route::get('/cart-download', function () {
