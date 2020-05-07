@@ -472,6 +472,8 @@ section li {
     font-family: Mont;
     font-size: 23px;
     font-style: italic;
+    margin-left: -2px;
+    margin-top: 1px;
 }
 
 .cart-subtotal {
@@ -838,6 +840,7 @@ width: 220px;
 
     .cart-products-included {
         position: relative;
+        margin-bottom: 30px;
     }
 
     .mask-name {
@@ -882,6 +885,7 @@ width: 220px;
         border-radius: 31px;
         margin: 20px 20px 0 auto;
         font-family: Mont;
+        margin-bottom: 50px;
 
         a {
             color: lighten(#989898, 30%);
@@ -992,12 +996,21 @@ width: 220px;
     justify-content: space-between;
     margin-bottom: 30px;
 
-    li:nth-child(2) {
-        margin-left: -176px;
-    }
-
     li {
         font-family: Mont;
+    }
+}
+
+.admin-list {
+    .order-headers {
+        li:nth-child(2) {
+            margin-left: -176px;
+        }
+    }
+
+    .constructors-list {
+        display: flex;
+        flex-direction: column-reverse;
     }
 }
 
@@ -1016,15 +1029,16 @@ button:hover, input[type=submit], input[type=file],
         font-family: Mont;
         font-size: 30px;
         margin: 30px 0;
+        color: grey;
     }
 
     .order-headers {
         li:nth-child(2) {
-            margin-left: -82px;
+            margin-left: -118px;
         }
 
         li:nth-child(4) {
-            margin-right: -99px;
+            margin-right: -75px;
         }
 
         li:nth-child(5) {
@@ -1034,5 +1048,34 @@ button:hover, input[type=submit], input[type=file],
 
     .constructors-list-description {
         width: 300px;
+        height: 200px;
+        overflow: auto;
+    }
+
+    .constructors-list-description::-webkit-scrollbar { width: 30px; height: 30px;}
+
+    .constructors-list {
+        li {
+            div:first-child {
+                font-size: 20px;
+            }
+
+            div:nth-child(5) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.constructors-list-description {
+    height: 200px;
+    overflow: auto;
+}
+
+.constructors-list-description::-webkit-scrollbar { width: 30px; height: 30px;}
+
+.constructors-list {
+    img {
+        border-radius: 34px;
     }
 }

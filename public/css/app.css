@@ -474,6 +474,8 @@ section li {
   font-family: Mont;
   font-size: 23px;
   font-style: italic;
+  margin-left: -2px;
+  margin-top: 1px;
 }
 
 .cart-subtotal {
@@ -832,6 +834,7 @@ section li {
 
 .cart-products .cart-products-included {
   position: relative;
+  margin-bottom: 30px;
 }
 
 .cart-products .mask-name {
@@ -876,6 +879,7 @@ section li {
   border-radius: 31px;
   margin: 20px 20px 0 auto;
   font-family: Mont;
+  margin-bottom: 50px;
 }
 
 .cart-products .cart-next a {
@@ -983,12 +987,17 @@ section li {
   margin-bottom: 30px;
 }
 
-.order-headers li:nth-child(2) {
+.order-headers li {
+  font-family: Mont;
+}
+
+.admin-list .order-headers li:nth-child(2) {
   margin-left: -176px;
 }
 
-.order-headers li {
-  font-family: Mont;
+.admin-list .constructors-list {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .constructors-list-description {
@@ -1007,14 +1016,15 @@ input[type=file],
   font-family: Mont;
   font-size: 30px;
   margin: 30px 0;
+  color: grey;
 }
 
 .user-constructor-list .order-headers li:nth-child(2) {
-  margin-left: -82px;
+  margin-left: -118px;
 }
 
 .user-constructor-list .order-headers li:nth-child(4) {
-  margin-right: -99px;
+  margin-right: -75px;
 }
 
 .user-constructor-list .order-headers li:nth-child(5) {
@@ -1023,5 +1033,34 @@ input[type=file],
 
 .user-constructor-list .constructors-list-description {
   width: 300px;
+  height: 200px;
+  overflow: auto;
+}
+
+.user-constructor-list .constructors-list-description::-webkit-scrollbar {
+  width: 30px;
+  height: 30px;
+}
+
+.user-constructor-list .constructors-list li div:first-child {
+  font-size: 20px;
+}
+
+.user-constructor-list .constructors-list li div:nth-child(5) {
+  font-size: 16px;
+}
+
+.constructors-list-description {
+  height: 200px;
+  overflow: auto;
+}
+
+.constructors-list-description::-webkit-scrollbar {
+  width: 30px;
+  height: 30px;
+}
+
+.constructors-list img {
+  border-radius: 34px;
 }
 

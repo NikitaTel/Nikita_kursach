@@ -44,7 +44,7 @@
             <ul class="constructors-list">
                 @foreach(\App\Constructor::all() as $constructor)
 
-                    <li>
+                    <li  @if($constructor->constructor_status=='Подтверждён') style="background: #f8f8f8;" @endif>
                         <div>{{$constructor->id}}</div>
                         <div>{{$constructor->constructor_status}}</div>
                         <div class="constructors-list-description">
@@ -78,10 +78,10 @@
         <section class="user-constructor-list">
             <h1>Мои заказы</h1>
             <ul class="order-headers">
-                <li>Номер</li>
+                <li>Номер <br>заказа</li>
                 <li>Статус</li>
                 <li>Описание</li>
-                <li>Прикреплённое фото</li>
+                <li>Приложение</li>
                 <li>Цена</li>
             </ul>
 
@@ -106,6 +106,10 @@
                                 <div>Цена не определена</div>
                             @endif
                         </li>
+
+                        @if($constructor->constructor_price !=null)
+                            <a href="../images/camera_styles.png" download class="">Скачать инструкцию</a>
+                        @endif
                     @endif
                 @endforeach
             </ul>
