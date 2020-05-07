@@ -26,10 +26,10 @@
                 </div>
         </div>
         <div class="pod-wrapper">
-            <a href="{{route('questions')}}">
+            <a href="{{route('home')}}">
                 <div class="pod-image">
-                    <h3>ЧАСТЫЕ ВОПРОСЫ</h3>
-                    <h3 class="opacity">ВОПРОСЫ</h3>
+                    <h3>ГЛАВНАЯ</h3>
+                    <h3 class="opacity">ГЛАВНАЯ</h3>
                 </div>
             </a>
         </div>
@@ -40,7 +40,7 @@
         @foreach($masks as $mask)
             @if($mask->category_id==1)
             <div class="catalog-element">
-                <div class="mask-mobile"><div class="mask-image" style="background: url('{{$mask->mask_img}}');background-size: 100% 100%;"></div></div>
+                <div class="mask-mobile"><div class="mask-image" style="background: url({{asset('/storage/' . $mask->mask_img) }});background-size: 100% 100%;"></div></div>
                 <div class="mask-wrapper">
                     <div class="mask-description">
                         <div class="mask-name">{{$mask->mask_name}}</div>
@@ -49,7 +49,7 @@
                         </a>
                     </div>
                     <div class="mask-qr">
-                        <div class="qr" style="background: url('{{$mask->mask_qr}}');background-size: 100% 100%;" ></div>
+                        <div class="qr" style="background: url('{{asset('/storage/' . $mask->mask_qr)}}');background-size: 100% 100%;" ></div>
                         <div class="try-it">
                             <span>попробовать в</span>
                             <span>Instagram</span>

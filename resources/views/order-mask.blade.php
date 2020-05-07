@@ -7,10 +7,12 @@
 @section('content')
     <section class="main-pods">
         <div class="pod-wrapper">
+            <a href="{{route('home')}}">
             <div class="pod-image">
                 <h3>ГЛАВНАЯ</h3>
                 <h3 class="opacity">ГЛАВНАЯ</h3>
             </div>
+            </a>
         </div>
         <div class="pod-wrapper">
             <a href="{{route('gallery')}}">
@@ -44,18 +46,28 @@
         <h4>Авторизуйтесь пожалуйста и мы свяжемся с вами для уточнения деталей</h4>
 
         <div class="order-form">
-        <form class="order-description" id="order-description">
-            <textarea name="" id="" cols="30" rows="10">
+        <form method="post" action="{{route('makeOrder', ['id'=>$user->id])}}"  id="order-description" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div  class="order-description">
+                <textarea name="description" id="" cols="30" rows="10">
 
-            </textarea>
+                </textarea>
+            </div>
 
-        </form>
             <p>
                 Я НЕ УМЕЮ ЧИТАТЬ ВАШИ МЫСЛИ! У меня нет такого навыка :)<br>
                 По этому старайтесь как можно точнее выразить все ваши пожелания,<br>
                 желательно с графическими примерами. <br>
             </p>
-            <button type="submit" class="order-information-submit" onClick="document.getElementById('order-description').submit()">прикрепить</button>
+            <label class="order-file-wrapper">
+                <input type="file" class="order-information-submit" accept=".jpg, .jpeg, .png, .gif" id="image" name="image">
+                <span class="order-information-submit">прикрепить</span>
+            </label>
+
+            <button type="submit" class="order-information-submit" onClick="document.getElementById('order-description').submit()">отправить</button>
+        </form>
+
+
         </div>
     </section>
 
@@ -137,4 +149,13 @@
             Стоимость заказа рассчитывается исходя из его сложности.
         </p>
     </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $('.order-file-wrapper > input').change(function(){
+            var value = $(".order-file-wrapper > input").val().replace(/.*\\/, "");;
+            $('.order-file-wrapper > span').text(value);
+
+        });
+    </script>
 @endsection

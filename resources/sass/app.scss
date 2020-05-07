@@ -7,7 +7,7 @@ html {
     scroll-behavior: smooth;
     border-right: 20px solid #78a195;
     border-left: 20px solid #78a195;
-    min-height: 100vh;
+    min-height: 110vh;
 }
 
 body {
@@ -706,6 +706,32 @@ background-size: 100% 100%;
 font-size: 15px;
 display: block;
 margin: 20px 0 10px auto;
+    text-align: center;
+}
+
+.order-information .order-file-wrapper {
+    position: relative;
+    display: block;
+    width: 108px;
+    margin-left: auto;
+
+    span.order-information-submit {
+        width: 108px;
+        color: #878787;
+        font-family: Mont;
+        letter-spacing: 3px;
+        font-weight: 100;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+    }
+
+    input {
+        opacity: 0;
+        width: 108px;
+        background: none;
+    }
 }
 
 .order-information .order-information-submit:focus {
@@ -887,6 +913,10 @@ width: 220px;
     .admin-add {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        width: 723px;
+        margin: auto;
+        height: 158px;
 
         > div {
             display: flex;
@@ -918,5 +948,91 @@ width: 220px;
         background: lighten(black, 20%);
         color: white;
         font-size: 16px;
+    }
+}
+
+// order-list
+
+.constructors-list {
+    div {
+        font-family: Mont;
+        font-weight: 100;
+        letter-spacing: 2px;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        border: 1px solid grey;
+        padding: 20px;
+        border-radius: 31px;
+    }
+
+    input, button {
+        margin-top: 5px;
+        padding: 10px 10px;
+        font-family: Mont;
+        border-radius: 18px;
+        border: 1px solid #c3c3c3;
+    }
+
+    input:focus, button:focus {
+        outline: none;
+    }
+}
+
+.admin-list {
+    margin-bottom: 50px;
+}
+
+.order-headers {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    li:nth-child(2) {
+        margin-left: -176px;
+    }
+
+    li {
+        font-family: Mont;
+    }
+}
+
+.constructors-list-description {
+    width: 350px;
+}
+
+button:hover, input[type=submit], input[type=file],
+.order-information-submit {
+    cursor: pointer;
+}
+
+.user-constructor-list {
+    h1 {
+        font-weight: 100;
+        font-family: Mont;
+        font-size: 30px;
+        margin: 30px 0;
+    }
+
+    .order-headers {
+        li:nth-child(2) {
+            margin-left: -82px;
+        }
+
+        li:nth-child(4) {
+            margin-right: -99px;
+        }
+
+        li:nth-child(5) {
+            margin-right: 42px;
+        }
+    }
+
+    .constructors-list-description {
+        width: 300px;
     }
 }

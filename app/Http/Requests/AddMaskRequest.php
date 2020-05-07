@@ -26,7 +26,9 @@ class AddMaskRequest extends FormRequest
         return [
             'name'=> 'required',
             'category' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'image' => 'required',
+            'qr'=> 'required'
         ];
     }
 
@@ -35,7 +37,9 @@ class AddMaskRequest extends FormRequest
         return [
             'name.required' => 'Поле название маски обязательно',
             'category.required' => 'Поле категория обязательно',
-            'price.required' => 'Поле цена обязательно'
+            'price.required' => 'Поле цена обязательно',
+            'The image field is required' => 'Поле фото обязательно',
+            'The qr field is required' => 'Поле qr обязательно',
         ];
     }
 }

@@ -12,17 +12,22 @@ class AddNewMask extends Controller
         $validation = $request->validate([
            'name'=> 'required',
            'category' => 'required',
-           'price' => 'required'
+           'price' => 'required',
+            'image' => 'required',
+            'qr' => 'required'
         ]);
+
 
         $name = $request->input('name');
         $category = $request->input('category');
         $price = $request->input('price');
+        $image = $request->file('image')->store('uploads', 'public');
+        $qr = $request->file('qr')->store('uploads', 'public');
 
         $mask = new Mask();
         $mask->mask_name= $name;
-        $mask->mask_img = "/images/".$name.".png";
-        $mask->mask_qr = "/images/".$name."-qr.gif";
+        $mask->mask_img = $image;
+        $mask->mask_qr = $qr;
         $mask->category_id = $category;
         $mask->price = $price;
 

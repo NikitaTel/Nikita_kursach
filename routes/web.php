@@ -68,3 +68,7 @@ Route::get('/add-to-cart/{id}', [
 Route::get('/remove-from-cart/{id}', [
     'uses' => 'CartController@removeFromCart'
 ])->name('removeFromCart');
+
+Route::post('/make-constructor{id}', 'AddConstructorController@add')->name('makeOrder');
+
+Route::post('/change-status{id}', 'AddConstructorController@status')->name('changeStatus');
