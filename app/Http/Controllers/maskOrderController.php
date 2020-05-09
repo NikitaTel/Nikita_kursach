@@ -13,20 +13,22 @@ class maskOrderController extends Controller
     public function order() {
 
         $order = new Order([
-            'payment_id' => 'card',
+            'price'=>null,
+            'payment_id'=>1,
             'user_id' => Auth::user()->id
         ]);
+
         $order->save();
-
         $order_id=$order->id;
-
 
         foreach((new CartController)->getCart()->items as $cart) {
             if($cart['item']['id']) {
 
                 $det_order = new DetailedCart([
-                    'payment_id' => 'card',
                     'mask_name' => $cart['item']['mask_name'],
+                    'mask_img' => $cart['item']['mask_img'],
+                    'mask_qr' => $cart['item']['mask_qr'],
+
                     'order_id' => $order_id
                 ]);
 
@@ -34,9 +36,9 @@ class maskOrderController extends Controller
             }
         }
 
-
+        $order->price=(new CartController)->getCart()->totalPrice;
+        $order->save();
 
         return view('cart-download',['user'=> Auth::user(),'check'=> Auth::check()]);
-
     }
 }

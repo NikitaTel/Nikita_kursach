@@ -19,7 +19,7 @@
         @if(Session::has('cart'))
             @foreach((new App\Http\Controllers\CartController)->getCart()->items as $cart)
                 @if($cart['item']['id'])
-                <div class="cart-products-included">
+                <div class="cart-products   -included">
                     <div class="cart-product-background"></div>
                     <div class="cart-product">
                         <span>{{$cart['qty']}}</span>
@@ -37,8 +37,6 @@
         @else
             <div class="empty-cart">Корзина пуста</div>
         @endif
-
-
 
     </section>
 

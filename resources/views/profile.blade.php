@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if($user->id_role ==1)
+    @if(\Illuminate\Support\Facades\Auth::user()->id_role ==1)
 
         <form class="admin-submit" method="post" action="{{route('addMask')}}" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -55,7 +55,7 @@
                     <li  @if($constructor->constructor_status=='Подтверждён') style="background: #f8f8f8;" @endif>
                         <div>{{$constructor->id}}</div>
                         <div>{{$constructor->constructor_status}}</div>
-                        <textarea class="constructors-list-description">
+                        <textarea class="constructors-list-description"  readonly @if($constructor->constructor_status=='Подтверждён') style="background: #f8f8f8;" @endif>
                             {{$constructor->constructor_description}}
                         </textarea>
 
@@ -67,7 +67,7 @@
                             <form action="{{route('changeStatus',['id'=>$constructor->id])}}" method="post">
                                 @csrf
 
-                                <input required type="text" placeholder="ввести цену" name="price" id="price" oninvalid="this.setCustomValidity('Wow!')">
+                                <input required type="text" placeholder="ввести цену" name="price" id="price">
                                 <button type="submit">
                                     Подтвердить заказ
                                 </button>
@@ -81,10 +81,14 @@
             </ul>
         </section>
 
-
     @else
+        <div class="user-headers">
+            <h1 class="constructors-header">Мои контрукторы</h1>
+            <h1 class="constructors-header">Мои маски</h1>
+        </div>
+
         <section class="user-constructor-list">
-            <h1>Мои заказы</h1>
+
             <ul class="order-headers">
                 <li>Статус</li>
                 <li>Описание</li>
@@ -94,7 +98,7 @@
 
             <ul class="constructors-list">
                 @foreach(\App\Constructor::all() as $constructor)
-                    @if($constructor->user_id==$user->id)
+                    @if($constructor->user_id==\Illuminate\Support\Facades\Auth::user()->id)
                         <li>
                             <div>{{$constructor->constructor_status}}</div>
                             <textarea class="constructors-list-description">
@@ -114,12 +118,42 @@
                         </li>
 
                         @if($constructor->constructor_price !=null)
-                            <a href="../images/camera_styles.png" download class="">Скачать инструкцию</a>
+                            <div class="cart-next"><a href="#">скачать файл с инструкциями</a></div>
                         @endif
                     @endif
                 @endforeach
             </ul>
         </section>
+
+        <section class="user-mask-list">
+            <div class="catalog">
+                @foreach(\App\Order::all()->where('user_id', \Illuminate\Support\Facades\Auth::user()->id) as $order)
+                            @foreach(\App\DetailedCart::all()->where('order_id', $order->id) as $detailedCart)
+                                <div class="catalog-element">
+                                    <div class="mask-name">
+                                        {{$detailedCart->mask_name}}
+                                    </div>
+                                    <div class="mask-mobile"><div class="mask-image" style="background: url({{asset('/storage/' . $detailedCart->mask_img) }});background-size: 100% 100%;"></div></div>
+                                    <div class="mask-qr">
+                                        <div class="qr" style="background: url({{asset('/storage/' . $detailedCart->mask_qr) }});background-size: 100% 100%;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                @endforeach
+            </div>
+        </section>
     @endif
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $('.constructors-header:first-child').click(function(){
+            $('.user-constructor-list').slideToggle();
+        });
+        $('.constructors-header:nth-child(2)').click(function(){
+            $('.user-mask-list').slideToggle();
+        });
+    </script>
 @endsection

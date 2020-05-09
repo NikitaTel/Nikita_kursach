@@ -5,18 +5,31 @@
             <li class="cart"><a href="{{route('cart')}}">корзина  @if(Session::has('cart'))
                 <span class="cart-count">{{Session::get('cart')->totalQty}}</span>
                     @else
-                        @endif</a></li>
-            <li class="sign-in">
-                @if($check ?? '')
-                    <a href="{{route('profile')}}">хеллоу,{{$user->login}}</a>
-
-                    <a  href="{{route('logoutUser')}}" class="sign-out">выйти</a>
-
-                @else
-                    <a href="{{route('login')}}">войти</a>
-                @endif
-
+                    @endif
+                </a>
             </li>
+
+            @if(\Illuminate\Support\Facades\Auth::check() ?? '')
+            <li class="sign-in">
+                <a href="{{route('profile')}}">хеллоу,{{\Illuminate\Support\Facades\Auth::user()->login}}
+                    @if(\Illuminate\Support\Facades\Auth::user()->id_role ==1)
+                        <span class="constructor-count">{{\App\Constructor::where('constructor_status','Анализ заказа')->count()}}</span>
+                    @endif
+                </a>
+            </li>
+            <li>
+                <a  href="{{route('logoutUser')}}" class="sign-out">выйти</a>
+            </li>
+
+
+            @else
+           <li>
+               <a href="{{route('login')}}">войти</a>
+           </li>
+
+            @endif
+
+
         </ul>
     </header>
 

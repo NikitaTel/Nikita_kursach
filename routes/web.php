@@ -19,36 +19,33 @@ use phpDocumentor\Reflection\Types\Boolean;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//,['user'=> Auth::user(),'check'=> Auth::check()]
 Route::get('/gallery', function () {
     return view('gallery',['user'=> Auth::user(),'check'=> Auth::check(),
         'masks' => Mask::all(),'cartCount']);
 })->name('gallery');
 
 Route::get('/order-mask', function () {
-    return view('order-mask',['user'=> Auth::user(),'check'=> Auth::check()]);
+    return view('order-mask');
 })->name('order-mask');
 
 Route::get('/questions', function () {
-    return view('questions',['user'=> Auth::user(),'check'=> Auth::check()]);
+    return view('questions');
 })->name('questions');
 
 Route::get('/profile', function () {
-        return view('profile',['user'=> Auth::user(),'check'=> Auth::check()]);
+        return view('profile');
 })->name('profile');
 
 Route::get('/cart', function () {
 //    session()->forget('cart');
-    return view('cart',['user'=> Auth::user(),'check'=> Auth::check()]);
-
+    return view('cart');
 })->name('cart');
 
-Route::get('/cart-download', function () {
-    return view('cart-download',['user'=> Auth::user(),'check'=> Auth::check()]);
-})->name('cart-download')->middleware('auth');
+Route::get('/cart-download', 'maskOrderController@order')->name('cart-download')->middleware('auth');
 
 Route::get('/cart-payment', function () {
-    return view('payment',['user'=> Auth::user(),'check'=> Auth::check()]);
+    return view('payment');
 })->name('cart-payment');
 
 Auth::routes();
@@ -60,7 +57,7 @@ Route::get('/logout', function () {
 
 
 Route::get('/', function () {
-    return view('home',['user'=> Auth::user(),'check'=> Auth::check()]);
+    return view('home');
 })->name('home');
 
 Route::post('/profile/add', 'AddNewMask@add')->name('addMask');

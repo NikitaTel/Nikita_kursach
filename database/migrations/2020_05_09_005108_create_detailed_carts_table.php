@@ -16,6 +16,8 @@ class CreateDetailedCartsTable extends Migration
         Schema::create('detailed_carts', function (Blueprint $table) {
             $table->id('id');
             $table->string('mask_name');
+            $table->string('mask_img');
+            $table->string('mask_qr');
             $table->integer('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
