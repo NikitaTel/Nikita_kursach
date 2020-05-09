@@ -27,7 +27,10 @@
                         <div class="mask-name">{{$cart['item']['mask_name']}}</div>
                         <span class="price-mask">{{$cart['item']['price']}} BYN</span>
                     </div>
-                    <a href="{{route('removeFromCart',['id' =>$cart['item']['id']])}}">Удалить</a>
+                    <a href="{{route('removeFromCart',['id' =>$cart['item']['id']])}}">
+                        <div class="remove-cart">
+                        </div>
+                    </a>
                 </div>
                 @endif
             @endforeach

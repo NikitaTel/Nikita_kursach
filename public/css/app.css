@@ -1206,3 +1206,12 @@ a.active-pod {
   margin-left: 45px;
 }
 
+.remove-cart {
+  background: url(/images/trash.png?6a4d506790bd9675ddd8e08e863789d1);
+  height: 30px;
+  width: 25px;
+  background-size: 100% 100%;
+  opacity: 0.6;
+  margin: 0 20px 0 auto;
+}
+
