@@ -8,26 +8,34 @@
             <div class="admin-add">
                 <div>
                     <label for="name">название маски</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" required>
                 </div>
                 <div>
                     <label for="category">категория</label>
-                    <input type="text" name="category" id="category">
+                    <input type="text" name="category" id="category" required>
                 </div>
                 <div>
                     <label for="price">цена</label>
-                    <input type="text" name="price" id="price">
+                    <input type="text" name="price" id="price" required>
                 </div>
                 <div>
                     <label for="image">фото маски</label>
-                    <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png">
+                    <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" required>
                 </div>
                 <div>
                     <label for="qr">qr-код</label>
-                    <input type="file" name="qr" id="qr" accept=".jpg, .jpeg, .png, .gif">
+                    <input type="file" name="qr" id="qr" accept=".jpg, .jpeg, .png, .gif" required  >
                 </div>
             </div>
-
+            @if($errors->any())
+                <div class="alert">
+                    <ul>
+                        @foreach($errors ->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <input type="submit" value="Добавить">
         </form>
@@ -47,9 +55,9 @@
                     <li  @if($constructor->constructor_status=='Подтверждён') style="background: #f8f8f8;" @endif>
                         <div>{{$constructor->id}}</div>
                         <div>{{$constructor->constructor_status}}</div>
-                        <div class="constructors-list-description">
+                        <textarea class="constructors-list-description">
                             {{$constructor->constructor_description}}
-                        </div>
+                        </textarea>
 
                         <div>
                             <img width="203px" src="{{asset('/storage/' . $constructor->constructor_image)}}" alt="">
@@ -59,7 +67,7 @@
                             <form action="{{route('changeStatus',['id'=>$constructor->id])}}" method="post">
                                 @csrf
 
-                                <input type="text" placeholder="ввести цену" name="price" id="price">
+                                <input required type="text" placeholder="ввести цену" name="price" id="price" oninvalid="this.setCustomValidity('Wow!')">
                                 <button type="submit">
                                     Подтвердить заказ
                                 </button>
@@ -78,7 +86,6 @@
         <section class="user-constructor-list">
             <h1>Мои заказы</h1>
             <ul class="order-headers">
-                <li>Номер <br>заказа</li>
                 <li>Статус</li>
                 <li>Описание</li>
                 <li>Приложение</li>
@@ -89,11 +96,10 @@
                 @foreach(\App\Constructor::all() as $constructor)
                     @if($constructor->user_id==$user->id)
                         <li>
-                            <div>{{$constructor->id}}</div>
                             <div>{{$constructor->constructor_status}}</div>
-                            <div class="constructors-list-description">
+                            <textarea class="constructors-list-description">
                                 {{$constructor->constructor_description}}
-                            </div>
+                            </textarea>
 
                             <div>
                                 <img width="150px" src="{{asset('/storage/' . $constructor->constructor_image)}}" alt="">
@@ -115,4 +121,5 @@
             </ul>
         </section>
     @endif
+
 @endsection

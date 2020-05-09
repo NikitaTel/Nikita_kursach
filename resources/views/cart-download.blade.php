@@ -8,13 +8,13 @@
 
     <section class="cart-pods">
         <ul>
-            <li><a href="{{route('cart')}}">1. описание заказа</a></li>
-            <li><a href="#">2. оплата</a></li>
-            <li><a href="{{route('cart-download')}}">3. скачивание</a></li>
+            <li>1. описание заказа</li>
+            <li>2. оплата</li>
+            <li><a href="#" disabled class="active-pod">3. скачивание</a></li>
         </ul>
     </section>
 
-    <section>
-        <div class="cart-next"><a href="#">Перейти к оплате</a></div>
+    <section class="download">
+        <div class="cart-next"><a href="#">скачать файл с инструкциями</a></div>
     </section>
 @endsection

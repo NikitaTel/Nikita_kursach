@@ -24,7 +24,7 @@ class ConstructorRequest extends FormRequest
     public function rules()
     {
         return [
-                'description'=> 'required|max:500',
+                'description'=> 'required|max:1000',
                 'image' => 'required'
         ];
     }

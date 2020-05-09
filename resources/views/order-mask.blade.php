@@ -46,12 +46,11 @@
         <h4>Авторизуйтесь пожалуйста и мы свяжемся с вами для уточнения деталей</h4>
 
         <div class="order-form">
-        <form method="post" action="{{route('makeOrder', ['id'=>$user->id])}}"  id="order-description" enctype="multipart/form-data">
+        <form method="post" @if($check ?? '') action="{{route('makeOrder', ['id'=>$user->id])}}" @else action="{{route('makeOrder', 0)}}" @endif id="order-description" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div  class="order-description">
-                <textarea name="description" id="" cols="30" rows="10">
+                <textarea required name="description" id="description" type="text"></textarea>
 
-                </textarea>
             </div>
 
             <p>
@@ -60,9 +59,19 @@
                 желательно с графическими примерами. <br>
             </p>
             <label class="order-file-wrapper">
-                <input type="file" class="order-information-submit" accept=".jpg, .jpeg, .png, .gif" id="image" name="image">
+                <input required type="file" class="order-information-submit" accept=".jpg, .jpeg, .png, .gif" id="image" name="image">
                 <span class="order-information-submit">прикрепить</span>
             </label>
+
+            @if($errors->any())
+                <div class="alert">
+                    <ul>
+                        @foreach($errors ->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <button type="submit" class="order-information-submit" onClick="document.getElementById('order-description').submit()">отправить</button>
         </form>

@@ -45,7 +45,11 @@ Route::get('/cart', function () {
 
 Route::get('/cart-download', function () {
     return view('cart-download',['user'=> Auth::user(),'check'=> Auth::check()]);
-})->name('cart-download');
+})->name('cart-download')->middleware('auth');
+
+Route::get('/cart-payment', function () {
+    return view('payment',['user'=> Auth::user(),'check'=> Auth::check()]);
+})->name('cart-payment');
 
 Auth::routes();
 
@@ -69,6 +73,6 @@ Route::get('/remove-from-cart/{id}', [
     'uses' => 'CartController@removeFromCart'
 ])->name('removeFromCart');
 
-Route::post('/make-constructor{id}', 'AddConstructorController@add')->name('makeOrder');
+Route::post('/make-constructor{id}', 'AddConstructorController@add')->name('makeOrder')->middleware('auth');
 
 Route::post('/change-status{id}', 'AddConstructorController@status')->name('changeStatus');

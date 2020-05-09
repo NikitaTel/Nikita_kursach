@@ -38,8 +38,8 @@ class AddMaskRequest extends FormRequest
             'name.required' => 'Поле название маски обязательно',
             'category.required' => 'Поле категория обязательно',
             'price.required' => 'Поле цена обязательно',
-            'The image field is required' => 'Поле фото обязательно',
-            'The qr field is required' => 'Поле qr обязательно',
+            'image.required' => 'Поле фото обязательно',
+            'qr.required' => 'Поле qr обязательно',
         ];
     }
 }

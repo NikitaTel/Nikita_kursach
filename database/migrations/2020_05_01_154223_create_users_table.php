@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->integer('id_role')->references('id_role')->on('roles');
+            $table->string('remember_token')->nullable();
             $table->timestamps();
         });
     }

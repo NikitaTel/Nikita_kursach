@@ -2,10 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConstructorsTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +13,11 @@ class CreateConstructorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('constructors', function (Blueprint $table) {
-            $table->increments('id');
-            $table->longText('constructor_description');
-            $table->string('constructor_status');
-            $table->string('constructor_image');
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id('id');
+            $table->integer('price');
+            $table->integer('payment_id')->references('Id_Payment')->on('payment_types');
             $table->integer('user_id')->references('id')->on('users');
-            $table->string('constructor_price')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateConstructorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('constructors');
+        Schema::dropIfExists('orders');
     }
 }

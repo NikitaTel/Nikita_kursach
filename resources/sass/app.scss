@@ -575,8 +575,13 @@ margin: auto;
 .login-form,
 .registration-form,
 .reset-password {
-width: 250px;
+width: 372px;
 margin: 150px auto;
+    .style-input {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .login-form,
@@ -683,7 +688,7 @@ font-weight: 100;
 z-index: 2;
 background: url(../images/order-input-borders.png?2a9a9b5d47d3c6e8f27b45670857c518);
 width: 775px;
-height: 376px;
+height: 367px;
 margin-left: auto;
 }
 
@@ -694,6 +699,16 @@ width: 100%;
 background-size: 100% 100%;
 height: 366px;
 padding: 10px 0 0 10px;
+    white-space: pre-wrap;
+}
+
+textarea {
+    border: none;
+    resize: none
+}
+
+textarea:focus {
+    outline: none;
 }
 
 .order-information textarea:focus {
@@ -1078,4 +1093,72 @@ button:hover, input[type=submit], input[type=file],
     img {
         border-radius: 34px;
     }
+}
+
+.alert {
+    li {
+        width: 350px;
+        margin: 15px auto;
+        background: #ff9999;
+        border-radius: 40px;
+        text-align: center;
+        padding: 5px 10px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.invalid-feedback {
+    width: 350px;
+    margin: 15px auto;
+    background: #ff9999;
+    border-radius: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form,
+.registration-form,
+.reset-password {
+    .style-input, button {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.form-check-input {
+    margin-left: 56px;
+}
+
+a.active-pod {
+   color: darken(#989898, 35%);
+}
+
+.payment, .download {
+    margin: 50px 0 0 86px;
+
+    a {
+        text-decoration: none;
+        background: #989898;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 20px;
+    }
+}
+
+.cart-products.payment {
+        .cart-cost {
+            justify-content: flex-start;
+
+            .cost {
+                margin-left: 15px;
+            }
+        }
 }

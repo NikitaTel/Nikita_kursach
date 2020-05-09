@@ -7,7 +7,7 @@
 @section('content')
     <section class="cart-pods">
         <ul>
-            <li><a href="{{route('cart')}}">1. описание заказа</a></li>
+            <li><a href="#" class="active-pod" >1. описание заказа</a></li>
             <li>2. оплата</li>
             <li>3. скачивание</li>
         </ul>
@@ -32,7 +32,7 @@
                 @endif
             @endforeach
                 <div class="cart-cost">Полная стоимость: <span class="cost">{{(new App\Http\Controllers\CartController)->getCart()->totalPrice}} BYN</span></div>
-                <div class="cart-next"><a href="{{route('cart-download')}}">Перейти к оплате</a></div>
+                <div class="cart-next"><a href="{{route('cart-payment')}}">Перейти к оплате</a></div>
 
         @else
             <div class="empty-cart">Корзина пуста</div>
