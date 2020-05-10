@@ -16,7 +16,6 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id('id');
             $table->integer('price')->nullable();
-            $table->integer('payment_id')->references('Id_Payment')->on('payment_types');
             $table->integer('user_id')->references('id')->on('users');
             $table->timestamps();
         });

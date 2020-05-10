@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Constructor;
 use App\DetailedCart;
 use App\Order;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,6 +40,7 @@ class maskOrderController extends Controller
         $order->price=(new CartController)->getCart()->totalPrice;
         $order->save();
 
+        Session::forget('cart');
         return view('cart-download',['user'=> Auth::user(),'check'=> Auth::check()]);
     }
 }

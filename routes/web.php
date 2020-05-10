@@ -21,8 +21,7 @@ use phpDocumentor\Reflection\Types\Boolean;
 */
 //,['user'=> Auth::user(),'check'=> Auth::check()]
 Route::get('/gallery', function () {
-    return view('gallery',['user'=> Auth::user(),'check'=> Auth::check(),
-        'masks' => Mask::all(),'cartCount']);
+    return view('gallery',['masks' => Mask::all(),'cartCount']);
 })->name('gallery');
 
 Route::get('/order-mask', function () {
@@ -33,12 +32,20 @@ Route::get('/questions', function () {
     return view('questions');
 })->name('questions');
 
+Route::get('/selfi', function () {
+    return view('selfi',['masks' => Mask::all(),'cartCount']);
+})->name('selfi');
+
+
+Route::get('/objects', function () {
+    return view('objects',['masks' => Mask::all(),'cartCount']);
+})->name('objects');
+
 Route::get('/profile', function () {
         return view('profile');
 })->name('profile');
 
 Route::get('/cart', function () {
-//    session()->forget('cart');
     return view('cart');
 })->name('cart');
 

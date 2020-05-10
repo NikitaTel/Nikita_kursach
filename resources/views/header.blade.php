@@ -12,7 +12,7 @@
             @if(\Illuminate\Support\Facades\Auth::check() ?? '')
             <li class="sign-in">
                 <a href="{{route('profile')}}">хеллоу,{{\Illuminate\Support\Facades\Auth::user()->login}}
-                    @if(\Illuminate\Support\Facades\Auth::user()->id_role ==1)
+                    @if(\Illuminate\Support\Facades\Auth::user()->id_role ==1 && \App\Constructor::where('constructor_status','Анализ заказа')->count() !=0)
                         <span class="constructor-count">{{\App\Constructor::where('constructor_status','Анализ заказа')->count()}}</span>
                     @endif
                 </a>

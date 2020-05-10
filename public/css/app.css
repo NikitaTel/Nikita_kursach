@@ -417,7 +417,7 @@ section li {
 .cart-image {
   background: url(/images/cart-image.png?c3148b97c895279c63884e1551edc93b);
   background-size: 100% 100%;
-  width: 127px;
+  width: 129px;
   height: 47px;
   display: flex;
   justify-content: flex-start;
@@ -451,7 +451,6 @@ section li {
 }
 
 .mask-image {
-  background: url(/images/LATTE.png?5b79ac4f1b95f34745a81ca2bcdab205);
   background-size: 100% 100%;
   height: 523px;
   top: 16px;
@@ -474,7 +473,7 @@ section li {
   font-family: Mont;
   font-size: 23px;
   font-style: italic;
-  margin-left: -2px;
+  margin-left: -3px;
   margin-top: 1px;
 }
 
@@ -506,7 +505,6 @@ section li {
 .qr {
   width: 100px;
   height: 100px;
-  background: url(/images/LATTE-qr.gif?acd43533bcf73771a0fa48ae40c51fef);
   background-size: 100% 100%;
 }
 
@@ -1213,5 +1211,25 @@ a.active-pod {
   background-size: 100% 100%;
   opacity: 0.6;
   margin: 0 20px 0 auto;
+}
+
+.gallery .catalog-element:nth-child(8) .mask-image {
+  top: 6px;
+  left: 14px;
+  width: 252px;
+  height: 550px;
+}
+
+.catalog {
+  margin-bottom: 50px;
+}
+
+.selfi .mask-image {
+  left: 13px;
+  width: 254px;
+}
+
+.selfi .mask-name {
+  width: 136px;
 }
 
