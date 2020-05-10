@@ -15,7 +15,6 @@ class maskOrderController extends Controller
 
         $order = new Order([
             'price'=>null,
-            'payment_id'=>1,
             'user_id' => Auth::user()->id
         ]);
 
@@ -40,7 +39,7 @@ class maskOrderController extends Controller
         $order->price=(new CartController)->getCart()->totalPrice;
         $order->save();
 
-        Session::forget('cart');
+//        (new \Illuminate\Contracts\Session\Session)->forget('cart');
         return view('cart-download',['user'=> Auth::user(),'check'=> Auth::check()]);
     }
 }

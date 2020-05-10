@@ -847,11 +847,16 @@ textarea:focus {
 
 .cart-products {
   margin-top: 50px;
+  position: relative;
 }
 
 .cart-products .cart-products-included {
   position: relative;
   margin-bottom: 30px;
+}
+
+.cart-products .cart-products-included .price-mask {
+  opacity: 0.6;
 }
 
 .cart-products .mask-name {
@@ -888,11 +893,11 @@ textarea:focus {
 
 .cart-products .cart-next {
   width: 200px;
-  background: #000;
+  background: #78a195;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 25px;
+  padding: 15px 20px;
   border-radius: 31px;
   margin: 20px 20px 0 auto;
   font-family: Mont;
@@ -911,6 +916,7 @@ textarea:focus {
   justify-content: flex-end;
   align-items: center;
   margin: 20px 116px 20px 0;
+  opacity: 0.6;
 }
 
 .cart-products .cart-cost .cost {
@@ -1207,8 +1213,8 @@ a.active-pod {
 
 .remove-cart {
   background: url(/images/trash.png?6a4d506790bd9675ddd8e08e863789d1);
-  height: 30px;
-  width: 25px;
+  height: 26px;
+  width: 21px;
   background-size: 100% 100%;
   opacity: 0.6;
   margin: 0 20px 0 auto;

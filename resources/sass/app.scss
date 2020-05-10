@@ -851,10 +851,15 @@ width: 220px;
 
 .cart-products {
     margin-top: 50px;
+    position: relative;
 
     .cart-products-included {
         position: relative;
         margin-bottom: 30px;
+
+        .price-mask {
+            opacity: 0.6;
+        }
     }
 
     .mask-name {
@@ -891,11 +896,11 @@ width: 220px;
 
     .cart-next {
         width: 200px;
-        background: #000;
+        background: #78a195;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px 25px;
+        padding: 15px 20px;
         border-radius: 31px;
         margin: 20px 20px 0 auto;
         font-family: Mont;
@@ -914,6 +919,7 @@ width: 220px;
         justify-content: flex-end;
         align-items: center;
         margin: 20px 116px 20px 0;
+        opacity: 0.6;
 
         .cost {
             font-family: Mont;
@@ -1217,8 +1223,8 @@ a.active-pod {
 
 .remove-cart {
     background: url('../images/trash.png');
-    height: 30px;
-    width: 25px;
+    height: 26px;
+    width: 21px;
     background-size: 100% 100%;
     opacity: 0.6;
     margin: 0 20px 0 auto;

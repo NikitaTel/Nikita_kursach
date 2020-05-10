@@ -19,18 +19,18 @@
         @if(Session::has('cart'))
             @foreach((new App\Http\Controllers\CartController)->getCart()->items as $cart)
                 @if($cart['item']['id'])
-                <div class="cart-products   -included">
+                <div class="cart-products-included">
                     <div class="cart-product-background"></div>
                     <div class="cart-product">
-                        <span>{{$cart['qty']}}</span>
+                        <a href="{{route('removeFromCart',['id' =>$cart['item']['id']])}}">
+                            <div class="remove-cart">
+                            </div>
+                        </a>
                         <div class="mask-mobile"><div class="mask-image" style="background: url('{{asset('/storage/' . $cart['item']->mask_img)}}');background-size: 100% 100%;"></div></div>
                         <div class="mask-name">{{$cart['item']['mask_name']}}</div>
                         <span class="price-mask">{{$cart['item']['price']}} BYN</span>
                     </div>
-                    <a href="{{route('removeFromCart',['id' =>$cart['item']['id']])}}">
-                        <div class="remove-cart">
-                        </div>
-                    </a>
+
                 </div>
                 @endif
             @endforeach
