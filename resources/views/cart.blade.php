@@ -38,7 +38,7 @@
                 <div class="cart-next"><a href="{{route('cart-payment')}}">Перейти к оплате</a></div>
 
         @else
-            <div class="empty-cart">Корзина пуста</div>
+            <div class="empty-cart">Корзина пуста, но вы можете это исправить</div>
         @endif
 
     </section>

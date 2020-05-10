@@ -488,6 +488,7 @@ section li {
     font-size: 15px;
     font-family: "Mont";
     letter-spacing: 3px;
+    text-align: center;
 }
 
 .mask-description {
@@ -516,7 +517,7 @@ section li {
 
 .mask-qr span:first-child {
 font-size: 10px;
-margin-top: 7px;
+    margin-top: -3px;
 }
 
 .mask-qr span:nth-child(2) {
@@ -1239,9 +1240,13 @@ a.active-pod {
 }
 
 .selfi {
+    .mask-mobile {
+        width: 287px;
+    }
+
     .mask-image {
         left: 13px;
-        width: 254px;
+        width: 261px;
     }
 
     .mask-name {
