@@ -6,6 +6,7 @@
             <h1 class="admin-header">Новая маска</h1>
             <h1 class="admin-header">Конструкторы</h1>
             <h1 class="admin-header">Маски</h1>
+            <h1 class="admin-header">Пользователи</h1>
         </div>
 
         <form class="admin-submit" method="post" action="{{route('addMask')}}" enctype="multipart/form-data">
@@ -114,6 +115,32 @@
             </ul>
 
         </section>
+
+        <section class="admin-users-list">
+            <ul class="order-headers">
+                <li>Id</li>
+                <li>Логин</li>
+                <li>Эл. почта</li>
+            </ul>
+            <ul class="admin-users-list-ul">
+            @foreach(\App\User::all() as $user)
+                @if($user->id != 1)
+                <li>
+                    <div>{{$user->id}}</div>
+                    <div>{{$user->login}}</div>
+                    <div>{{$user->email}}</div>
+                    <div>
+                        <a href="{{route('removeUser', ['id'=>$user->id])}}">
+                            <div class="remove-cart">
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                    @endif
+
+                @endforeach
+            </ul>
+        </section>
     @else
         <div class="user-headers">
             <h1 class="constructors-header">Мои контрукторы</h1>
@@ -173,7 +200,9 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <section class="download">
+                                        <div class="cart-next"><a href="#" download>скачать файл с инструкциями</a></div>
+                                    </section>
                                 </div>
                             @endforeach
                 @endforeach
@@ -203,6 +232,10 @@
 
         $('.admin-header:nth-child(3)').click(function(){
             $('.admin-masks-list').slideToggle();
+        });
+
+        $('.admin-header:nth-child(4)').click(function(){
+            $('.admin-users-list').slideToggle();
         });
 
 

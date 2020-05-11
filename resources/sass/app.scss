@@ -432,7 +432,8 @@ section li {
     padding: 2px 0px 2px 3px;
     justify-content: center;
     align-items: center;
-    width: 19px;
+    width: auto;
+    min-width: 19px;
     font-size: 14px;
     color: white;
 }
@@ -1198,6 +1199,7 @@ a.active-pod {
 
 .admin-headers {
     margin-top: 50px;
+    flex-wrap: wrap;
 
     .admin-header {
         text-align: center;
@@ -1208,6 +1210,7 @@ a.active-pod {
             color: darken(grey, 10%);
             transition: all 0.5s;
             letter-spacing: 10px;
+             width: 400px;
     }
 
     .admin-header:hover {
@@ -1218,6 +1221,11 @@ a.active-pod {
 
 .user-mask-list {
     display: none;
+
+    .download {
+        width: 100%;
+        margin: 30px auto;
+    }
 
     .catalog {
         margin-top: 30px;
@@ -1289,7 +1297,8 @@ a.active-pod {
 
 .admin-submit,
 .admin-list,
-.admin-masks-list {
+.admin-masks-list,
+.admin-users-list {
     display: none;
 }
 
@@ -1326,5 +1335,31 @@ a.active-pod {
 
     .mask-name {
         margin: 0 -36px 0 0;
+    }
+}
+
+.admin-users-list {
+    .order-headers {
+        width: 751px;
+
+        li {
+            width: 400px;
+        }
+    }
+
+    .admin-users-list-ul {
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            > div {
+                width: 400px;
+            }
+
+            div:last-child {
+
+            }
+        }
     }
 }

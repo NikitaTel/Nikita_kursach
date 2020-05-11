@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Auth;
+use App\Http\Controllers\DeleteUserController;
 use App\Http\Controllers\HomeController;
 
 use App\Mask;
@@ -80,3 +81,5 @@ Route::get('/remove-from-cart/{id}', [
 Route::post('/make-constructor{id}', 'AddConstructorController@add')->name('makeOrder')->middleware('auth');
 
 Route::post('/change-status{id}', 'AddConstructorController@status')->name('changeStatus');
+
+Route::get('/delete-user{id}', 'DeleteUserController@delete')->name('removeUser');
