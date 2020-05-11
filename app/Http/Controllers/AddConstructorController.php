@@ -13,7 +13,7 @@ class AddConstructorController extends Controller
         $image=$request->file('image')->store('orders', 'public');;
 
         $constructor = new Constructor([
-            'constructor_description' => $request['description'],
+            'constructor_description' => trim($request['description']),
             'constructor_image' => $image,
             'constructor_status' => 'Анализ заказа',
             'constructor_price' => null,

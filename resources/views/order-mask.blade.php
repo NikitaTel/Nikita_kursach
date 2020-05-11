@@ -46,7 +46,7 @@
         <h4>Авторизуйтесь пожалуйста и мы свяжемся с вами для уточнения деталей</h4>
 
         <div class="order-form">
-        <form method="post" @if($check ?? '') action="{{route('makeOrder', ['id'=>$user->id])}}" @else action="{{route('makeOrder', 0)}}" @endif id="order-description" enctype="multipart/form-data">
+        <form method="post" @if(\Illuminate\Support\Facades\Auth::check() ?? '') action="{{route('makeOrder', ['id'=>\Illuminate\Support\Facades\Auth::user()->id])}}" @else action="{{route('makeOrder', 0)}}" @endif id="order-description" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div  class="order-description">
                 <textarea required name="description" id="description" type="text"></textarea>

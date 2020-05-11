@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use App\Mask;
 class AddNewMask extends Controller
 {
-    public function add(AddMaskRequest $request)
-    {
+    public function add(AddMaskRequest $request) {
         $validation = $request->validate([
            'name'=> 'required',
            'category' => 'required',

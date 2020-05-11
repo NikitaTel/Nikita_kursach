@@ -39,7 +39,6 @@ class maskOrderController extends Controller
         $order->price=(new CartController)->getCart()->totalPrice;
         $order->save();
 
-//        (new \Illuminate\Contracts\Session\Session)->forget('cart');
         return view('cart-download',['user'=> Auth::user(),'check'=> Auth::check()]);
     }
 }

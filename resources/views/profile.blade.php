@@ -2,6 +2,11 @@
 
 @section('content')
     @if(\Illuminate\Support\Facades\Auth::user()->id_role ==1)
+        <div class="admin-headers">
+            <h1 class="admin-header">Новая маска</h1>
+            <h1 class="admin-header">Конструкторы</h1>
+            <h1 class="admin-header">Маски</h1>
+        </div>
 
         <form class="admin-submit" method="post" action="{{route('addMask')}}" enctype="multipart/form-data">
         {{ csrf_field() }}
@@ -55,9 +60,7 @@
                     <li  @if($constructor->constructor_status=='Подтверждён') style="background: #f8f8f8;" @endif>
                         <div>{{$constructor->id}}</div>
                         <div>{{$constructor->constructor_status}}</div>
-                        <textarea class="constructors-list-description"  readonly @if($constructor->constructor_status=='Подтверждён') style="background: #f8f8f8;" @endif>
-                            {{$constructor->constructor_description}}
-                        </textarea>
+                        <textarea class="constructors-list-description"  readonly @if($constructor->constructor_status=='Подтверждён') style="background: #f8f8f8;" @endif>{{$constructor->constructor_description}}</textarea>
 
                         <div>
                             <img width="203px" src="{{asset('/storage/' . $constructor->constructor_image)}}" alt="">
@@ -81,6 +84,36 @@
             </ul>
         </section>
 
+        <section class="admin-masks-list">
+            <ul class="order-headers">
+                <li>Id Заказа</li>
+                <li>Id Пользователя</li>
+                <li>Маски</li>
+                <li>Стоимость</li>
+            </ul>
+            <ul class="admin-masks-list-ul">
+                @foreach(\App\Order::all() as $order)
+                    <li>
+                        <div>{{$order->id}}</div>
+                        <div>{{$order->user_id}}</div>
+                        <ul>
+
+                                @foreach(\App\DetailedCart::all()->where('order_id', $order->id) as $detailedCart)
+                                    <li>
+                                        <div class="mask-name">
+                                            {{$detailedCart->mask_name}}
+                                        </div>
+                                    </li>
+
+                                @endforeach
+
+                        </ul>
+                        <div>{{$order->price}}</div>
+                    </li>
+                @endforeach
+            </ul>
+
+        </section>
     @else
         <div class="user-headers">
             <h1 class="constructors-header">Мои контрукторы</h1>
@@ -101,9 +134,7 @@
                     @if($constructor->user_id==\Illuminate\Support\Facades\Auth::user()->id)
                         <li>
                             <div>{{$constructor->constructor_status}}</div>
-                            <textarea class="constructors-list-description">
-                                {{$constructor->constructor_description}}
-                            </textarea>
+                            <textarea class="constructors-list-description">{{$constructor->constructor_description}}</textarea>
 
                             <div>
                                 <img width="150px" src="{{asset('/storage/' . $constructor->constructor_image)}}" alt="">
@@ -130,20 +161,25 @@
                 @foreach(\App\Order::all()->where('user_id', \Illuminate\Support\Facades\Auth::user()->id) as $order)
                             @foreach(\App\DetailedCart::all()->where('order_id', $order->id) as $detailedCart)
                                 <div class="catalog-element">
-                                    <div class="mask-name">
-                                        {{$detailedCart->mask_name}}
-                                    </div>
-                                    <div class="mask-mobile"><div class="mask-image" style="background: url({{asset('/storage/' . $detailedCart->mask_img) }});background-size: 100% 100%;"></div></div>
-                                    <div class="mask-qr">
-                                        <div class="qr" style="background: url({{asset('/storage/' . $detailedCart->mask_qr) }});background-size: 100% 100%;">
 
+                                    <div class="mask-mobile"><div class="mask-image" style="background: url({{asset('/storage/' . $detailedCart->mask_img) }});background-size: 100% 100%;"></div></div>
+
+                                    <div class="name-qr-wrapper">
+                                        <div class="mask-name">
+                                            {{$detailedCart->mask_name}}
+                                        </div>
+                                        <div class="mask-qr">
+                                            <div class="qr" style="background: url({{asset('/storage/' . $detailedCart->mask_qr) }});background-size: 100% 100%;">
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             @endforeach
                 @endforeach
             </div>
         </section>
+
     @endif
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -155,5 +191,20 @@
         $('.constructors-header:nth-child(2)').click(function(){
             $('.user-mask-list').slideToggle();
         });
+
+
+        $('.admin-header:nth-child(1)').click(function(){
+            $('.admin-submit').slideToggle();
+        });
+
+        $('.admin-header:nth-child(2)').click(function(){
+            $('.admin-list').slideToggle();
+        });
+
+        $('.admin-header:nth-child(3)').click(function(){
+            $('.admin-masks-list').slideToggle();
+        });
+
+
     </script>
 @endsection
