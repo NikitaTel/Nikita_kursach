@@ -201,7 +201,7 @@
                                         </div>
                                     </div>
                                     <section class="download">
-                                        <div class="cart-next"><a href="#" download>скачать файл с инструкциями</a></div>
+                                        <div class="cart-next"><a href="{{ \Illuminate\Support\Facades\Storage::url('instructions.rar')}}" download>скачать файл с инструкциями</a></div>
                                     </section>
                                 </div>
                             @endforeach
