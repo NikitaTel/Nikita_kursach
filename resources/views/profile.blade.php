@@ -4,6 +4,7 @@
     @if(\Illuminate\Support\Facades\Auth::user()->id_role ==1)
         <div class="admin-headers">
             <h1 class="admin-header">Новая маска</h1>
+            <h1 class="admin-header">Удаление маски</h1>
             <h1 class="admin-header">Конструкторы</h1>
             <h1 class="admin-header">Маски</h1>
             <h1 class="admin-header">Пользователи</h1>
@@ -46,6 +47,29 @@
             <input type="submit" value="Добавить">
         </form>
 
+        <section class="admin-delete-mask">
+            <ul class="order-headers">
+                <li>Id</li>
+                <li>Название</li>
+                <li>Фото</li>
+            </ul>
+            <ul class="admin-delete-mask-ul">
+                @foreach(\App\Mask::all() as $mask)
+                    <li>
+                        <div>{{$mask->id}}</div>
+                        <div>{{$mask->mask_name}}</div>
+                        <img src="{{'/storage/' . $mask->mask_img}}" width="150" alt="{{$mask->mask_name}}}">
+                        <div>
+                            <a href="{{route('removeMask', ['id'=>$mask->id])}}">
+                                <div class="remove-cart">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+        </section>
+
         <section class="admin-list">
 
             <ul class="order-headers">
@@ -70,8 +94,17 @@
                         @if($constructor->constructor_status=='Анализ заказа')
                             <form action="{{route('changeStatus',['id'=>$constructor->id])}}" method="post">
                                 @csrf
-
+                                @if($errors->any())
+                                    <div class="alert">
+                                        <ul>
+                                            @foreach($errors ->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <input required type="text" placeholder="ввести цену" name="price" id="price">
+
                                 <button type="submit">
                                     Подтвердить заказ
                                 </button>
@@ -176,7 +209,9 @@
                         </li>
 
                         @if($constructor->constructor_price !=null)
-                            <div class="cart-next"><a href="#">скачать файл с инструкциями</a></div>
+                            <section class="download">
+                                <div class="cart-next"><a href="{{ \Illuminate\Support\Facades\Storage::url('instructions.rar')}}" download>скачать файл с инструкциями</a></div>
+                            </section>
                         @endif
                     @endif
                 @endforeach
@@ -227,14 +262,18 @@
         });
 
         $('.admin-header:nth-child(2)').click(function(){
-            $('.admin-list').slideToggle();
+            $('.admin-delete-mask').slideToggle();
         });
 
         $('.admin-header:nth-child(3)').click(function(){
-            $('.admin-masks-list').slideToggle();
+            $('.admin-list').slideToggle();
         });
 
         $('.admin-header:nth-child(4)').click(function(){
+            $('.admin-masks-list').slideToggle();
+        });
+
+        $('.admin-header:nth-child(5)').click(function(){
             $('.admin-users-list').slideToggle();
         });
 

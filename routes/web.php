@@ -83,3 +83,5 @@ Route::post('/make-constructor{id}', 'AddConstructorController@add')->name('make
 Route::post('/change-status{id}', 'AddConstructorController@status')->name('changeStatus');
 
 Route::get('/delete-user{id}', 'DeleteUserController@delete')->name('removeUser');
+
+Route::get('/delete-mask{id}', 'DeleteMaskController@delete')->name('removeMask');

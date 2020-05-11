@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Constructor;
 use App\Http\Requests\ConstructorRequest;
+use App\Http\Requests\StatusRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,7 @@ class AddConstructorController extends Controller
         return redirect()->route('order-mask');
     }
 
-    public function status(Request $request, $id) {
+    public function status(StatusRequest $request, $id) {
 
         $constructor = Constructor::find($id);
         $constructor->constructor_status='Подтверждён';

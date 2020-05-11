@@ -1193,13 +1193,15 @@ a.active-pod {
 
 .user-headers, .admin-headers {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 82px;
+    margin-bottom: 50px;
 }
 
 .admin-headers {
     margin-top: 50px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 
     .admin-header {
         text-align: center;
@@ -1362,4 +1364,42 @@ a.active-pod {
             }
         }
     }
+}
+
+.contacts-header {
+    font-weight: 100;
+    font-family: Mont;
+    letter-spacing: 8px;
+    color: #989898;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+.admin-delete-mask {
+    .order-headers {
+        width: 629px;
+        padding-left: 10px;
+    }
+
+    .admin-delete-mask-ul {
+        li {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 20px;
+
+            img {
+                border-radius: 28px;
+            }
+        }
+    }
+}
+
+.admin-delete-mask {
+    display: none;
 }

@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-<h1>Contacts</h1>
+<h3 class="contacts-header">страница находится в разработке :)</h3>
 @endsection

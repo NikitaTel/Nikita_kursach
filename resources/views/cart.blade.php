@@ -16,12 +16,13 @@
 
 
     <section class="cart-products">
-        <ul>
-            <li>изображение</li>
-            <li>название</li>
-            <li>цена</li>
-        </ul>
+
         @if(Session::has('cart'))
+            <ul>
+                <li>изображение</li>
+                <li>название</li>
+                <li>цена</li>
+            </ul>
             @foreach((new App\Http\Controllers\CartController)->getCart()->items as $cart)
                 @if($cart['item']['id'])
                 <div class="cart-products-included">
