@@ -1380,6 +1380,8 @@ a.active-pod {
 
 .objects .price-mask {
   font-size: 20px;
+  width: 81px;
+  text-align: center;
 }
 
 .objects .mask-image {
