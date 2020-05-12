@@ -1189,6 +1189,10 @@ a.active-pod {
   margin-bottom: 50px;
 }
 
+.user-headers {
+  justify-content: space-between;
+}
+
 .admin-headers {
   margin-top: 50px;
   flex-direction: column;
@@ -1372,5 +1376,14 @@ a.active-pod {
 
 .admin-delete-mask {
   display: none;
+}
+
+.objects .price-mask {
+  font-size: 20px;
+}
+
+.objects .mask-image {
+  left: 15px;
+  width: 252px;
 }
 

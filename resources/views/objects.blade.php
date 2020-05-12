@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    <section class="catalog">
+    <section class="catalog objects">
         @foreach($masks as $mask)
             @if($mask->category_id==3)
                 <div class="catalog-element">
