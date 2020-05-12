@@ -251,6 +251,7 @@
     <script type="text/javascript">
         $('.constructors-header:first-child').click(function(){
             $('.user-constructor-list').slideToggle();
+
         });
         $('.constructors-header:nth-child(2)').click(function(){
             $('.user-mask-list').slideToggle();
@@ -259,24 +260,28 @@
 
         $('.admin-header:nth-child(1)').click(function(){
             $('.admin-submit').slideToggle();
+            $('.admin-delete-mask, .admin-users-list, .admin-list, .admin-masks-list').css('display','none');
         });
 
         $('.admin-header:nth-child(2)').click(function(){
             $('.admin-delete-mask').slideToggle();
+            $('.admin-submit, .admin-users-list, .admin-list, .admin-masks-list').css('display','none');
         });
 
         $('.admin-header:nth-child(3)').click(function(){
             $('.admin-list').slideToggle();
+            $('.admin-delete-mask, .admin-users-list, .admin-submit, .admin-masks-list').css('display','none');
         });
 
         $('.admin-header:nth-child(4)').click(function(){
             $('.admin-masks-list').slideToggle();
+            $('.admin-delete-mask, .admin-users-list, .admin-list, .admin-submit').css('display','none');
         });
 
         $('.admin-header:nth-child(5)').click(function(){
             $('.admin-users-list').slideToggle();
+            $('.admin-delete-mask, .admin-list, .admin-masks-list, .admin-submit').css('display','none');
         });
-
 
     </script>
 @endsection
