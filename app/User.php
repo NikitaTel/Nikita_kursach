@@ -12,6 +12,6 @@ use Illuminate\Notifications\Notifiable;
 class User extends Model implements AuthContract,CanResetPasswordContract
 {
     //
-    protected $fillable=['login','email','password','id_role'];
+    protected $fillable=['login','email','password','city', 'sender', 'phone_number', 'name'];
     use Authenticatable, CanResetPassword, Notifiable;
 }

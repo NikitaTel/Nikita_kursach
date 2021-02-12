@@ -582,6 +582,15 @@ margin: 150px auto;
         margin-left: auto;
         margin-right: auto;
     }
+
+    .sender-label {
+        font-family: "Mont";
+        font-size: 15px;
+        color: #555555;
+        text-align: center;
+        display: block;
+        margin-bottom: 30px;
+    }
 }
 
 .login-form,
@@ -1418,4 +1427,13 @@ a.active-pod {
         left: 15px;
         width: 252px;
     }
+}
+
+.sender-label {
+    font-family: "Mont";
+    font-size: 15px;
+    color: #555555;
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
 }

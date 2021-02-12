@@ -32,6 +32,59 @@
                         </div>
 
                         <div class="form-group row">
+
+                            <div class="col-md-6">
+                                <input placeholder="Имя" id="name" type="text" class="form-control @error('name') is-invalid @enderror style-input" name="name" value="{{ old('name') }}" required autocomplete="name">
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input placeholder="Город" id="city" type="text" class="form-control @error('city') is-invalid @enderror style-input" name="city" value="{{ old('city') }}" required autocomplete="city">
+
+                                @error('city')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input placeholder="Номер телефона" id="phone_number" type="text" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror style-input" value="{{ old('phone_number') }}" required autocomplete="phone_number">
+
+                                @error('phone_number')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label for="sender" class="sender-label">Являетесь ли вы отправителем?</label>
+
+                                <input name="sender" type="hidden">
+                                <input id="sender" type="checkbox" class="form-control style-input" name="sender">
+
+                                @error('sender')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <div class="col-md-6">
                                 <input placeholder="Пароль" id="password" type="password" class="form-control @error('password') is-invalid @enderror style-input" name="password" required autocomplete="new-password">
 
@@ -44,7 +97,6 @@
                         </div>
 
                         <div class="form-group row">
-
                                 <input placeholder="Подтвердите пароль" id="password-confirm" type="password" class="form-control style-input" name="password_confirmation" required autocomplete="new-password">
                         </div>
 

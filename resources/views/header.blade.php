@@ -2,13 +2,6 @@
 
     <header>
         <ul>
-            <li class="cart"><a href="{{route('cart')}}">корзина  @if(Session::has('cart'))
-                <span class="cart-count">{{Session::get('cart')->totalQty}}</span>
-                    @else
-                    @endif
-                </a>
-            </li>
-
             @if(\Illuminate\Support\Facades\Auth::check() ?? '')
             <li class="sign-in">
                 <a href="{{route('profile')}}">хеллоу,{{\Illuminate\Support\Facades\Auth::user()->login}}
@@ -33,5 +26,4 @@
         </ul>
     </header>
 
-    <h1 class="main-title"><a href="{{route('home')}}">TWINPIXEL</a></h1>
-    <h3 class="spark-ar">SPARK AR STUDIO | 2020</h3>
+    <h1 class="main-title"><a href="{{route('home')}}">Belarus Delivery</a></h1>

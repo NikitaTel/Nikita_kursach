@@ -1,29 +1,25 @@
 <?php
 namespace App\Http\Controllers\Auth;
-use App\Http\Controllers\DeleteUserController;
-use App\Http\Controllers\HomeController;
 
+use App\Deal;
+use App\Deal_product;
 use App\Mask;
-use App\Providers\RouteServiceProvider;
-use Darryldecode\Cart\Cart;
+use App\Partner;
+use App\User;
+
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use phpDocumentor\Reflection\Types\Boolean;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-//,['user'=> Auth::user(),'check'=> Auth::check()]
-Route::get('/gallery', function () {
-    return view('gallery',['masks' => Mask::all(),'cartCount']);
-})->name('gallery');
+
+Route::get('/strangersProfile', function () {
+    return view('strangersProfile', ['users' => User::all()]);
+})->name('strangersProfile');
+
+Route::get('/filter', function () {
+    return view('filter', ['city'=>null,'users' => User::all()]);
+})->name('filter');
+
 
 Route::get('/order-mask', function () {
     return view('order-mask');
@@ -43,7 +39,7 @@ Route::get('/objects', function () {
 })->name('objects');
 
 Route::get('/profile', function () {
-        return view('profile');
+        return view('profile',['deals' => Deal::all(), 'partners'=> Partner::all(), 'deal_products'=>Deal_product::all()]);
 })->name('profile');
 
 Route::get('/cart', function () {
@@ -81,7 +77,9 @@ Route::get('/remove-from-cart/{id}', [
 Route::post('/make-constructor{id}', 'AddConstructorController@add')->name('makeOrder')->middleware('auth');
 
 Route::post('/change-status{id}', 'AddConstructorController@status')->name('changeStatus');
+Route::post('/filteredUsers', 'FilterUsersController@filter')->name('filterUsers');
+
+Route::post('/make_a_deal/{receiver_id}/{sender_id}/{city_from}', 'MakeADeal@deal')->name('make_a_deal')->middleware('auth');
+
 
 Route::get('/delete-user{id}', 'DeleteUserController@delete')->name('removeUser');
-
-Route::get('/delete-mask{id}', 'DeleteMaskController@delete')->name('removeMask');
