@@ -9,8 +9,13 @@ html {
   scroll-behavior: smooth;
   border-right: 20px solid #fe6f61;
   border-left: 20px solid #fe6f61;
-  min-height: 110vh;
-    font-family: 'Mont';
+  min-height: 100vh;
+  font-family: "Mont";
+  color: #555555;
+}
+
+h1 {
+  margin: 15px 0;
 }
 
 body {
@@ -605,13 +610,13 @@ section li {
   z-index: 1;
   overflow: hidden;
   margin: 40px auto;
-    font-family: 'Mont';
-    font-size: 16px;
-    background: gainsboro;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: #333;
+  font-family: "Mont";
+  font-size: 16px;
+  background: gainsboro;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #333;
 }
 
 .login-form .style-input,
@@ -704,8 +709,10 @@ section li {
 }
 
 textarea {
-  border: none;
+  border: 1px solid #555555;
+  padding: 5px;
   resize: none;
+  border-radius: 5px;
 }
 
 textarea:focus {
@@ -1392,112 +1399,170 @@ a.active-pod {
 }
 
 .sender-label {
-    font-family: "Mont";
-    font-size: 15px;
-    color: #555555;
-    text-align: center;
-    display: block;
-    margin-bottom: 30px;
+  font-family: "Mont";
+  font-size: 15px;
+  color: #555555;
+  text-align: center;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .filter-input {
-    width: 80%;
-    border: none;
-    border-bottom: 1px solid gainsboro;
-    font-family: 'Mont';
-    font-size: 15px;
-    color: #555555;
-    border-radius: 10px;
-    padding: 10px;
+  width: 30%;
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  font-family: "Mont";
+  font-size: 15px;
+  color: #555555;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .filter-input:focus {
-    outline: none;
-    border-bottom: 1px solid gainsboro;
+  outline: none;
+  border-bottom: 1px solid gainsboro;
 }
 
 .filter-submit {
-    font-family: 'Mont';
-    font-size: 16px;
-    background: gainsboro;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: #333;
+  font-family: "Mont";
+  font-size: 16px;
+  background: gainsboro;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #333;
 }
 
 .user {
-    display: flex;
-    padding: 10px 20px;
+  display: flex;
+  padding: 10px 20px;
 }
 
-.user > span, .user > a {
-    font-family: 'Mont';
-    font-size: 20px;
-    padding-right: 10px;
-    color: #333;
-    text-decoration: none;
+.user > span,
+.user > a {
+  font-family: "Mont";
+  font-size: 20px;
+  padding-right: 10px;
+  color: #333;
+  text-decoration: none;
 }
 
 .filtered-heading {
-    font-family: 'Mont';
-    color: #333;
-    font-weight: 400;
-    font-size: 29px;
-    margin-top: 20px;
+  font-family: "Mont";
+  color: #333;
+  font-weight: 400;
+  font-size: 29px;
+  margin-top: 20px;
 }
 
 .user-profile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .user-description > span {
-    width: 23%;
+  width: 23%;
 }
 
 .user-description {
-    width: 80%;
-    margin-left: 20px;
-    height: 100px;
-    display: flex;
-    flex-wrap: wrap;
+  width: 80%;
+  margin-left: 20px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .user-profile-image {
-    border-radius: 50%;
-    border: 6px solid pink;
-    width: 150px;
+  border-radius: 50%;
+  border: 6px solid pink;
+  width: 150px;
 }
 
 .deal-form {
-    width: 30%;
-    margin-top: 50px;
+  width: 30%;
+  margin-top: 50px;
 }
 
-.deal-form input[type='text'] {
-        font-family: 'Mont';
-        font-size: 15px;
-        color: #555555;
-        line-height: 1.2;
-        display: block;
-        width: 100%;
-        height: 45px;
-        background: transparent;
-        padding: 0 5px;
-        outline: none;
-        border: none;
-        position: relative;
-        border-bottom: 2px solid #adadad;
-        margin-bottom: 37px;
+.deal-form input[type=text] {
+  font-family: "Mont";
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  padding: 0 5px;
+  outline: none;
+  border: none;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin-bottom: 37px;
 }
 
-.deal-form input[type='submit'] {
-    font-family: 'Mont';
-    font-size: 16px;
-    background: gainsboro;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: #333;
+.deal-form input[type=submit] {
+  font-family: "Mont";
+  font-size: 16px;
+  background: gainsboro;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #333;
 }
+
+.filter-users-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-header,
+.result-pod {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-pods {
+  margin: 2rem 0;
+}
+
+.result-pods li {
+  margin: 1rem 0;
+  font-size: 17px;
+}
+
+.result-pods li a {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b3961;
+}
+
+.result-pod {
+  margin: 1rem 0;
+}
+
+.result-header > div,
+.result-pod > div {
+  width: 14%;
+  margin-right: 1rem;
+}
+
+.add-review {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.add-review label {
+  margin: 0 10px 0 0;
+}
+
+.submit {
+  font-family: "Mont";
+  font-size: 16px;
+  background: gainsboro;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #333;
+}
+

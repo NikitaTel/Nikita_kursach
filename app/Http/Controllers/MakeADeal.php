@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Deal_product;
 use App\Partner;
 use App\Deal;
+use App\User;
 use Illuminate\Http\Request;
 
 class MakeADeal extends Controller
@@ -17,8 +18,8 @@ class MakeADeal extends Controller
         $city_to = $request->input('city');
 
         $deal = new Deal();
-        $deal->city_to= $city_to;
-        $deal->city_from = $city_from;
+        $deal->city_to= User::all()->find($request->input('sender_id'))->city_to;
+        $deal->city_from = User::all()->find($request->input('sender_id'))->city;
         $deal->save();
 
         $partner = new Partner();
@@ -34,6 +35,6 @@ class MakeADeal extends Controller
         $deal_product->benefit_price = $benefit;
         $deal_product->save();
 
-        return view('home');
+        return redirect($request->input('url'));
     }
 }

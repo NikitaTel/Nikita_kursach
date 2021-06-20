@@ -16,11 +16,15 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('role_id')->default(2);
-            $table->integer('sender');
+            $table->double('mark', 15, 1);
+            $table->integer('mark_count');
+            $table->integer('mark_summary');
+            $table->string('sender');
             $table->string('login');
             $table->string('name');
             $table->string('city');
-            $table->integer('phone_number');
+            $table->string('city_to');
+            $table->string('phone_number');
             $table->string('email');
             $table->string('password');
             $table->string('remember_token')->nullable();

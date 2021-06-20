@@ -7,11 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-use Illuminate\Notifications\Notifiable;
-
 class User extends Model implements AuthContract,CanResetPasswordContract
 {
-    //
-    protected $fillable=['login','email','password','city', 'sender', 'phone_number', 'name'];
-    use Authenticatable, CanResetPassword, Notifiable;
+    protected $fillable=['login','city','password','city_to', 'phone_number', 'sender', 'email', 'name', 'mark', 'mark_count', 'mark_summary'];
+    use Authenticatable, CanResetPassword;
 }

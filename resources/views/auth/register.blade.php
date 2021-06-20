@@ -46,7 +46,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input placeholder="Город" id="city" type="text" class="form-control @error('city') is-invalid @enderror style-input" name="city" value="{{ old('city') }}" required autocomplete="city">
+                                <input placeholder="Ваш город" id="city" type="text" class="form-control @error('city') is-invalid @enderror style-input" name="city" value="{{ old('city') }}" required autocomplete="city">
 
                                 @error('city')
                                 <span class="invalid-feedback" role="alert">
@@ -56,6 +56,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input placeholder="Город доставки" id="city_to" type="text" class="form-control @error('city_to') is-invalid @enderror style-input" name="city_to" value="{{ old('city_to') }}" required autocomplete="city_to">
+
+                                @error('city_to')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <div class="col-md-6">

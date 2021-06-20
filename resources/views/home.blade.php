@@ -14,9 +14,5 @@
 @include('inc.messages')
 
 <main>
-    <form action="{{route('filterUsers')}}" METHOD="POST">
-        @csrf
-        <input name = "city" type="text" class="filter-input">
-        <input type="submit" class="filter-submit" value="Поиск">
-    </form>
+    @include('filterForm')
 </main>
